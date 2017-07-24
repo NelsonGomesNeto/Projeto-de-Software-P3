@@ -1,4 +1,4 @@
-package Herança;
+package herenca;
 
 /**
  * Created by alunoic on 24/07/17.
@@ -6,5 +6,9 @@ package Herança;
 public class Student extends Person {
 
     public Student() {
+    }
+
+    public void study() {
+
     }
 }

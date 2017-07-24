@@ -1,4 +1,4 @@
-package Herança;
+package herenca;
 
 /**
  * Created by alunoic on 24/07/17.
@@ -16,5 +16,10 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
