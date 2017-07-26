@@ -14,22 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Person person = new Person();
 
-        Student student = new Student();
-
-        Person p = new Student();
-
-        Person f = new Faculty();
-
-        // But can't do: Student/Faculty l = new Person()
-        // Because not every Student/Faculty is a Person!
-
-        // p can't access specific variables and methods from Student
-
-        student.setName("Anderson");
-
-        System.out.printf(student.getName());
     }
 }
 
