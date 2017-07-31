@@ -16,6 +16,14 @@ public class CartãoDePonto {
         this.horasTrabalhadas = horasTrabalhadas;
     }
 
+    public Date getData() {
+        return this.data;
+    }
+
+    public double getHorasTrabalhadas() {
+        return this.horasTrabalhadas;
+    }
+
     @Override
     public String toString() {
         return "CartãoDePonto{" +

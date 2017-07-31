@@ -11,7 +11,7 @@ import java.util.Date;
 public class Hourly extends Empregado {
 
     private double salárioHorário;
-    ArrayList<CartãoDePonto> cartões = new ArrayList<>();
+    private ArrayList<CartãoDePonto> cartões = new ArrayList<>();
 
     public Hourly() {
     }
@@ -26,6 +26,20 @@ public class Hourly extends Empregado {
 
         CartãoDePonto cartãoDePonto = new CartãoDePonto(data, horasTrabalhadas);
         this.cartões.add(cartãoDePonto);
+    }
+
+    public int getQuantidadeDeCartoões() {
+
+        return this.cartões.size();
+    }
+
+    public ArrayList<CartãoDePonto> getCartões() {
+
+        return this.cartões;
+    }
+
+    public double getSalárioHorário() {
+        return this.salárioHorário;
     }
 
     @Override

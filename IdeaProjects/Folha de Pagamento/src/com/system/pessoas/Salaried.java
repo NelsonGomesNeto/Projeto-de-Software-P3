@@ -18,6 +18,10 @@ public class Salaried extends Empregado {
         this.salárioMensal = salárioMensal;
     }
 
+    public double getSalárioMensal() {
+        return this.salárioMensal;
+    }
+
     @Override
     public String toString() {
         return "Salaried{" +

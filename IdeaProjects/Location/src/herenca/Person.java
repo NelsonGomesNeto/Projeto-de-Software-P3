@@ -8,21 +8,7 @@ public class Person {
     private String name;
 
     public Person() {
-
     }
-
-    public Person(String name) {
-        super();
-
-        this.name = name;
-        System.out.println("Name: " + name);
-    }
-
-    public void addPerson(String person) {
-
-        System.out.println("Sysout Person");
-    }
-
 
     public String getName() {
         return name;
@@ -34,6 +20,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Name: " + name;
+        return super.toString();
     }
 }
