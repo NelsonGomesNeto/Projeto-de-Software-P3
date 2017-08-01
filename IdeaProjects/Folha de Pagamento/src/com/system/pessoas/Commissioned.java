@@ -1,5 +1,6 @@
 package com.system.pessoas;
 
+import com.system.pagamentos.TaxaDeServiço;
 import com.system.pagamentos.Venda;
 
 import java.util.ArrayList;
@@ -10,40 +11,53 @@ import java.util.Date;
  */
 public class Commissioned extends Empregado {
 
-    private double taxaDeComissão;
-    private ArrayList<Venda> vendas = new ArrayList<>();
+  private double taxaDeComissão;
+  private ArrayList<Venda> vendas = new ArrayList<>();
 
-    public Commissioned(int ID, String nome, String endereço) {
-        super(ID, nome, endereço);
-    }
+  public Commissioned() {
+    super();
+  }
 
-    public Commissioned(int ID, String nome, String endereço, double taxaDeComissão) {
-        super(ID, nome, endereço);
+  public Commissioned(int ID, String nome, String endereço) {
+    super(ID, nome, endereço);
+  }
 
-        this.taxaDeComissão = taxaDeComissão;
-    }
+  public Commissioned(int ID, String nome, String endereço, double taxaDeComissão) {
+    super(ID, nome, endereço);
 
-    public void lançarResultadoDeVenda(Date data, double valorDaVenda) {
+    this.taxaDeComissão = taxaDeComissão;
+  }
 
-        Venda cartãoDePonto = new Venda(data, valorDaVenda);
-        this.vendas.add(cartãoDePonto);
-    }
+  public Commissioned(int ID, String nome, String endereço, String métodoDePagamento, int IDNoSindicato, boolean fazParteDoSindicato, ArrayList<TaxaDeServiço> taxas) {
+    super(ID, nome, endereço, métodoDePagamento, IDNoSindicato, fazParteDoSindicato, taxas);
 
-    public int getQuantidadeDeVendas() {
+  }
 
-        return this.vendas.size();
-    }
+  public void lançarResultadoDeVenda(Date data, double valorDaVenda) {
 
-    public ArrayList<Venda> getVendas() {
-        return this.vendas;
-    }
+    Venda cartãoDePonto = new Venda(data, valorDaVenda);
+    this.vendas.add(cartãoDePonto);
+  }
 
-    @Override
-    public String toString() {
-        return "Commissioned{" +
-                super.toString() +
-                ", taxaDeComissão=" + taxaDeComissão +
-                ", vendas=" + vendas +
-                '}';
-    }
+  public double getTaxaDeComissão() {
+    return this.taxaDeComissão;
+  }
+
+  public int getQuantidadeDeVendas() {
+
+    return this.vendas.size();
+  }
+
+  public ArrayList<Venda> getVendas() {
+    return this.vendas;
+  }
+
+  @Override
+  public String toString() {
+    return "Commissioned{" +
+      super.toString() +
+      ", taxaDeComissão=" + taxaDeComissão +
+      ", vendas=" + vendas +
+      '}';
+  }
 }

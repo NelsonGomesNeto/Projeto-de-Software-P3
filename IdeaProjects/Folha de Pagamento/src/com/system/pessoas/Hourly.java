@@ -1,6 +1,7 @@
 package com.system.pessoas;
 
 import com.system.pagamentos.CartãoDePonto;
+import com.system.pagamentos.TaxaDeServiço;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,44 +11,49 @@ import java.util.Date;
  */
 public class Hourly extends Empregado {
 
-    private double salárioHorário;
-    private ArrayList<CartãoDePonto> cartões = new ArrayList<>();
+  private double salárioHorário;
+  private ArrayList<CartãoDePonto> cartões = new ArrayList<>();
 
-    public Hourly() {
-    }
+  public Hourly() {
+  }
 
-    public Hourly(int ID, String nome, String endereço, double salárioHorário) {
-        super(ID, nome, endereço);
+  public Hourly(int ID, String nome, String endereço, double salárioHorário) {
+    super(ID, nome, endereço);
 
-        this.salárioHorário = salárioHorário;
-    }
+    this.salárioHorário = salárioHorário;
+  }
 
-    public void lançarCartãoDePonto(Date data, double horasTrabalhadas) {
+  public Hourly(int ID, String nome, String endereço, String métodoDePagamento, int IDNoSindicato, boolean fazParteDoSindicato, ArrayList<TaxaDeServiço> taxas) {
+    super(ID, nome, endereço, métodoDePagamento, IDNoSindicato, fazParteDoSindicato, taxas);
 
-        CartãoDePonto cartãoDePonto = new CartãoDePonto(data, horasTrabalhadas);
-        this.cartões.add(cartãoDePonto);
-    }
+  }
 
-    public int getQuantidadeDeCartoões() {
+  public void lançarCartãoDePonto(Date data, double horasTrabalhadas) {
 
-        return this.cartões.size();
-    }
+    CartãoDePonto cartãoDePonto = new CartãoDePonto(data, horasTrabalhadas);
+    this.cartões.add(cartãoDePonto);
+  }
 
-    public ArrayList<CartãoDePonto> getCartões() {
+  public int getQuantidadeDeCartoões() {
 
-        return this.cartões;
-    }
+    return this.cartões.size();
+  }
 
-    public double getSalárioHorário() {
-        return this.salárioHorário;
-    }
+  public ArrayList<CartãoDePonto> getCartões() {
 
-    @Override
-    public String toString() {
-        return "Hourly{" +
-                super.toString() +
-                ", salárioHorário=" + salárioHorário +
-                ", cartões=" + cartões +
-                '}';
-    }
+    return this.cartões;
+  }
+
+  public double getSalárioHorário() {
+    return this.salárioHorário;
+  }
+
+  @Override
+  public String toString() {
+    return "Hourly{" +
+      super.toString() +
+      ", salárioHorário=" + salárioHorário +
+      ", cartões=" + cartões +
+      '}';
+  }
 }

@@ -11,62 +11,85 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Empregado {
 
-    public int ID;
-    public String nome;
-    private String endereço;
+  public int ID;
+  public String nome;
+  private String endereço;
 
-    private String métodoDePagamento = "";
+  private String métodoDePagamento = "Depósito Bancário";
 
-    private int IDNoSindicato;
-    public boolean fazParteDoSindicato;
-    private ArrayList<TaxaDeServiço> taxas = new ArrayList<>();
+  public int IDNoSindicato;
+  public boolean fazParteDoSindicato;
+  private ArrayList<TaxaDeServiço> taxas = new ArrayList<>();
 
-    public Empregado() {
+  public Empregado() {
+  }
+
+  public Empregado(int ID, String nome, String endereço) {
+
+    this.ID = ID;
+    this.nome = nome;
+    this.endereço = endereço;
+  }
+
+  public Empregado(int ID, String nome, String endereço, String métodoDePagamento, int IDNoSindicato, boolean fazParteDoSindicato, ArrayList<TaxaDeServiço> taxas) {
+    this.ID = ID;
+    this.nome = nome;
+    this.endereço = endereço;
+    this.métodoDePagamento = métodoDePagamento;
+    this.IDNoSindicato = IDNoSindicato;
+    this.fazParteDoSindicato = fazParteDoSindicato;
+    this.taxas = taxas;
+
+  }
+
+  public int getID() {
+    return ID;
+  }
+
+  public ArrayList<TaxaDeServiço> getTaxas() {
+    return taxas;
+  }
+
+  public void setFazParteDoSindicato(boolean fazParteDoSindicato) {
+    this.fazParteDoSindicato = fazParteDoSindicato;
+  }
+
+  public void setIDNoSindicato(int IDNoSindicato) {
+
+    this.IDNoSindicato = IDNoSindicato;
+  }
+
+  public String getMétodoDePagamento() {
+    return métodoDePagamento;
+  }
+
+  public void setMétodoDePagamento(String métodoDePagamento) {
+    this.métodoDePagamento = métodoDePagamento;
+  }
+
+  public boolean lançarTaxaDeServiço(Date data, double valorDaTaxa) {
+
+    if (this.fazParteDoSindicato) {
+
+      TaxaDeServiço taxa = new TaxaDeServiço(data, valorDaTaxa);
+      this.taxas.add(taxa);
+      System.out.println("Taxa de Serviço lançada com sucesso!\n");
+      return(true);
+    } else {
+
+      System.out.println("Este empregado não faz parte do sindicato!\n");
+      return(false);
     }
+  }
 
-    public Empregado(int ID, String nome, String endereço) {
+  public String getNome() {
+    return nome;
+  }
 
-        this.ID = ID;
-        this.nome = nome;
-        this.endereço = endereço;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setIDNoSindicato(int IDNoSindicato) {
-
-        this.IDNoSindicato = IDNoSindicato;
-    }
-
-    public void setMétodoDePagamento(String métodoDePagamento) {
-        this.métodoDePagamento = métodoDePagamento;
-    }
-
-    public boolean lançarTaxaDeServiço(Date data, double valorDaTaxa) {
-
-        if (this.fazParteDoSindicato) {
-
-            TaxaDeServiço taxa = new TaxaDeServiço(data, valorDaTaxa);
-            this.taxas.add(taxa);
-            System.out.println("Taxa de Serviço lançada com sucesso!\n");
-            return(true);
-        } else {
-
-            System.out.println("Este empregado não faz parte do sindicato!\n");
-            return(false);
-        }
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    @Override
-    public String toString() {
-        return "ID=" + ID +
-                ", nome='" + nome + '\'' +
-                ", endereço='" + endereço + '\'';
-    }
+  @Override
+  public String toString() {
+    return "ID=" + ID +
+      ", nome='" + nome + '\'' +
+      ", endereço='" + endereço + '\'';
+  }
 }
