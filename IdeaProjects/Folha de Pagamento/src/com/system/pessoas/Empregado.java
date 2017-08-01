@@ -1,5 +1,6 @@
 package com.system.pessoas;
 
+import com.system.pagamentos.AgendaDePagamento;
 import com.system.pagamentos.TaxaDeServiço;
 
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ public class Empregado {
   public boolean fazParteDoSindicato;
   private ArrayList<TaxaDeServiço> taxas = new ArrayList<>();
 
+  public AgendaDePagamento agendaDePagamento = null;
+
   public Empregado() {
   }
 
@@ -32,6 +35,7 @@ public class Empregado {
   }
 
   public Empregado(int ID, String nome, String endereço, String métodoDePagamento, int IDNoSindicato, boolean fazParteDoSindicato, ArrayList<TaxaDeServiço> taxas) {
+
     this.ID = ID;
     this.nome = nome;
     this.endereço = endereço;
@@ -39,7 +43,6 @@ public class Empregado {
     this.IDNoSindicato = IDNoSindicato;
     this.fazParteDoSindicato = fazParteDoSindicato;
     this.taxas = taxas;
-
   }
 
   public int getID() {
@@ -65,6 +68,10 @@ public class Empregado {
 
   public void setMétodoDePagamento(String métodoDePagamento) {
     this.métodoDePagamento = métodoDePagamento;
+  }
+
+  public void setAgendaDePagamento(AgendaDePagamento agendaDePagamento) {
+    this.agendaDePagamento = agendaDePagamento;
   }
 
   public boolean lançarTaxaDeServiço(Date data, double valorDaTaxa) {

@@ -3,7 +3,9 @@ package com.system;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.system.pagamentos.AgendaDePagamento;
 import com.system.pagamentos.CartãoDePonto;
+import com.system.pagamentos.TaxaDeServiço;
 import com.system.pagamentos.Venda;
 import com.system.pessoas.Commissioned;
 import com.system.pessoas.Hourly;
@@ -159,6 +161,8 @@ public class Main {
     Date data = dateFormat.parse(scan.nextLine());
     double horasTrabalhadas = scan.nextDouble();
 
+    data = listHourly.get(selected).agendaDePagamento.novaDataDePagamento(data);
+
     listHourly.get(selected).lançarCartãoDePonto(data, horasTrabalhadas);
     System.out.println(listHourly.get(selected));
     System.out.println("Cartão de Ponto lançado com sucesso!\n");
@@ -176,6 +180,8 @@ public class Main {
 
     Date data = dateFormat.parse(scan.nextLine());
     double valorDaVenda = scan.nextDouble();
+
+    data = listCommissioned.get(selected).agendaDePagamento.novaDataDePagamento(data);
 
     listCommissioned.get(selected).lançarResultadoDeVenda(data, valorDaVenda);
     System.out.println(listHourly.get(selected));
@@ -204,12 +210,15 @@ public class Main {
 
     switch (command) {
       case 1:
+        data = listHourly.get(selected).agendaDePagamento.novaDataDePagamento(data);
         listHourly.get(selected).lançarTaxaDeServiço(data, valorDaTaxa);
         break;
       case 2:
+        data = listSalaried.get(selected).agendaDePagamento.novaDataDePagamento(data);
         listSalaried.get(selected).lançarTaxaDeServiço(data, valorDaTaxa);
         break;
       case 3:
+        data = listCommissioned.get(selected).agendaDePagamento.novaDataDePagamento(data);
         listCommissioned.get(selected).lançarTaxaDeServiço(data, valorDaTaxa);
         break;
       default:
@@ -399,7 +408,6 @@ public class Main {
 
       for (CartãoDePonto cartão : hourly.getCartões()) {
 
-
         if (cartão.getData().after(dataInicial) && cartão.getData().before(dataFinal)) {
 
           if (cartão.getHorasTrabalhadas() > 8) {
@@ -413,6 +421,14 @@ public class Main {
         }
       }
 
+      for (TaxaDeServiço taxa : hourly.getTaxas()) {
+
+        if (taxa.getData().after(dataInicial) && taxa.getData().before(dataFinal)) {
+
+          pagamentoAtual -= taxa.getValorDaTaxa();
+        }
+      }
+
       if (pagamentoAtual != 0) {
 
         System.out.println("\t" + hourly.getNome() + " R$" + pagamentoAtual + ", via: " + hourly.getMétodoDePagamento());
@@ -420,10 +436,23 @@ public class Main {
       pagamentoTotal += pagamentoAtual;
     }
 
-    System.out.println("Assaliados: ");
+    System.out.println("Assalariados: ");
     for (Salaried salaried : listSalaried) {
 
-      double pagamentoAtual = salaried.getSalárioMensal();
+      double pagamentoAtual = 0;
+
+      Date novaDataDePagamento = salaried.agendaDePagamento.novaDataDePagamento(dataInicial);
+      if (novaDataDePagamento.after(dataInicial) && novaDataDePagamento.before(dataFinal)) {
+        pagamentoAtual = salaried.getSalárioMensal();
+      }
+
+      for (TaxaDeServiço taxa : salaried.getTaxas()) {
+
+        if (taxa.getData().after(dataInicial) && taxa.getData().before(dataFinal)) {
+
+          pagamentoAtual -= taxa.getValorDaTaxa();
+        }
+      }
 
       if (pagamentoAtual != 0) {
 
@@ -441,6 +470,14 @@ public class Main {
         if (venda.getData().after(dataInicial) && venda.getData().before(dataFinal)) {
 
           pagamentoAtual += commissioned.getTaxaDeComissão() * venda.getValorDaVenda();
+        }
+      }
+
+      for (TaxaDeServiço taxa : commissioned.getTaxas()) {
+
+        if (taxa.getData().after(dataInicial) && taxa.getData().before(dataFinal)) {
+
+          pagamentoAtual -= taxa.getValorDaTaxa();
         }
       }
 
@@ -501,6 +538,55 @@ public class Main {
     }
   }
 
+  public void alterarAgendaDePagamento(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned,
+                                       ArrayList<AgendaDePagamento> listAgenda) {
+
+    System.out.println("----Alterar Agenda de Pagamento----");
+    System.out.println("1 - Empregados Horistas");
+    System.out.println("2 - Empregados Salariados");
+    System.out.println("3 - Empregados Comissionados");
+
+    int command = scan.nextInt();
+
+    int selectedEmployee = selecionarEmpregado(command, listHourly, listSalaried, listCommissioned);
+
+    if (selectedEmployee == -1) {
+
+      return;
+    }
+
+    int i = 0;
+    for (AgendaDePagamento agendaDePagamento : listAgenda) {
+
+      System.out.println(i + " - Período: " + agendaDePagamento.período + ", Dia: " + agendaDePagamento.dia);
+    }
+    System.out.printf("Agenda desejada: ");
+    int selectedAgenda = scan.nextInt();
+
+    switch (command) {
+      case 1:
+        listHourly.get(selectedEmployee).setAgendaDePagamento(listAgenda.get(selectedAgenda));
+        break;
+      case 2:
+        listSalaried.get(selectedEmployee).setAgendaDePagamento(listAgenda.get(selectedAgenda));
+        break;
+      case 3:
+        listCommissioned.get(selectedEmployee).setAgendaDePagamento(listAgenda.get(selectedAgenda));
+    }
+
+    System.out.println("Agenda alterada com sucesso!");
+  }
+
+  public void criarAgendaDePagamento(ArrayList<AgendaDePagamento> listAgenda) {
+
+    System.out.printf("Período de pagamento: ");
+    String periodo = scan.nextLine();
+    System.out.printf("Dia: ");
+    int dia = scan.nextInt();
+
+    listAgenda.add(new AgendaDePagamento(periodo, dia));
+  }
+
   public static void main(String[] args) throws FileNotFoundException, ParseException {
 
     Main main = new Main();
@@ -512,6 +598,10 @@ public class Main {
     ArrayList<Hourly> listHourly = new ArrayList<>();
     ArrayList<Salaried> listSalaried = new ArrayList<>();
     ArrayList<Commissioned> listCommissioned = new ArrayList<>();
+    ArrayList<AgendaDePagamento> listAgenda = new ArrayList<>();
+    listAgenda.add(new AgendaDePagamento("semanalmente", 5));
+    listAgenda.add(new AgendaDePagamento("mensalmente", 32));
+    listAgenda.add(new AgendaDePagamento("bi-semanalmente", 5));
 
     Stack<ArrayList<Hourly>> pilhaUndoHourly = new Stack<>();
     pilhaUndoHourly.push(new ArrayList<Hourly>());
@@ -527,16 +617,18 @@ public class Main {
     while (true) {
 
       System.out.println("\n------------Menu------------");
-      System.out.println("1 - Adicionar empregrado: ");
-      System.out.println("2 - Remover empregado: ");
-      System.out.println("3 - Lançar cartão de ponto: ");
-      System.out.println("4 - Lançar resultado de venda: ");
-      System.out.println("5 - Lançar taxa de serviço: ");
-      System.out.println("6 - Alterar detalhes de um empregado: ");
-      System.out.println("7 - Rodar folha de pagamento: ");
-      System.out.println("8 - Undo: ");
-      System.out.println("9 - Redo: ");
-      System.out.println("13 - Sair");
+      System.out.println("1  - Adicionar empregrado: ");
+      System.out.println("2  - Remover empregado: ");
+      System.out.println("3  - Lançar cartão de ponto: ");
+      System.out.println("4  - Lançar resultado de venda: ");
+      System.out.println("5  - Lançar taxa de serviço: ");
+      System.out.println("6  - Alterar detalhes de um empregado: ");
+      System.out.println("7  - Rodar folha de pagamento: ");
+      System.out.println("8  - Undo: ");
+      System.out.println("9  - Redo: ");
+      System.out.println("10 - Alterar Agenda de Pagamento: ");
+      System.out.println("11 - Criar Agenda de Pagamento: ");
+      System.out.println("12 - Sair");
 
       int command = main.scan.nextInt();
       main.scan.nextLine();
@@ -571,14 +663,20 @@ public class Main {
           main.redo(listHourly, listSalaried, listCommissioned, pilhaUndoHourly, pilhaUndoSalaried, pilhaUndoCommissioned,
             pilhaRedoHourly, pilhaRedoSalaried, pilhaRedoCommissioned);
           break;
-        case 13:
+        case 10:
+          main.alterarAgendaDePagamento(listHourly, listSalaried, listCommissioned, listAgenda);
+          break;
+        case 11:
+          main.criarAgendaDePagamento(listAgenda);
+          break;
+        case 12:
           System.out.printf("Até logo!");
           return;
         default:
           break;
       }
 
-      if (command != 8 && command != 9 && command != 7) {
+      if (command != 8 && command != 9 && command != 7 && command != 12) {
 
         Type type = new TypeToken<ArrayList<Hourly>>() {
         }.getType();

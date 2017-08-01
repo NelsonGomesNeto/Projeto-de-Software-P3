@@ -1,5 +1,6 @@
 package com.system.pessoas;
 
+import com.system.pagamentos.AgendaDePagamento;
 import com.system.pagamentos.TaxaDeServiço;
 import com.system.pessoas.Empregado;
 
@@ -20,11 +21,13 @@ public class Salaried extends Empregado {
     super(ID, nome, endereço);
 
     this.salárioMensal = salárioMensal;
+    this.agendaDePagamento = new AgendaDePagamento("mensalmente", 32);
   }
 
   public Salaried(int ID, String nome, String endereço, String métodoDePagamento, int IDNoSindicato, boolean fazParteDoSindicato, ArrayList<TaxaDeServiço> taxas) {
     super(ID, nome, endereço, métodoDePagamento, IDNoSindicato, fazParteDoSindicato, taxas);
 
+    this.agendaDePagamento = new AgendaDePagamento("mensalmente", 32);
   }
 
   public double getSalárioMensal() {

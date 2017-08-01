@@ -1,5 +1,6 @@
 package com.system.pessoas;
 
+import com.system.pagamentos.AgendaDePagamento;
 import com.system.pagamentos.TaxaDeServiço;
 import com.system.pagamentos.Venda;
 
@@ -26,11 +27,13 @@ public class Commissioned extends Empregado {
     super(ID, nome, endereço);
 
     this.taxaDeComissão = taxaDeComissão;
+    this.agendaDePagamento = new AgendaDePagamento("bi-semanalmente", 5);
   }
 
   public Commissioned(int ID, String nome, String endereço, String métodoDePagamento, int IDNoSindicato, boolean fazParteDoSindicato, ArrayList<TaxaDeServiço> taxas) {
     super(ID, nome, endereço, métodoDePagamento, IDNoSindicato, fazParteDoSindicato, taxas);
 
+    this.agendaDePagamento = new AgendaDePagamento("sbi-emanalmente", 5);
   }
 
   public void lançarResultadoDeVenda(Date data, double valorDaVenda) {
