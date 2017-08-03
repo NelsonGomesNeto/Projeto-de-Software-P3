@@ -1,20 +1,17 @@
 package com.system;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.system.pagamentos.AgendaDePagamento;
-import com.system.pagamentos.CartãoDePonto;
-import com.system.pagamentos.TaxaDeServiço;
-import com.system.pagamentos.Venda;
-import com.system.pessoas.Commissioned;
-import com.system.pessoas.Hourly;
-import com.system.pessoas.Salaried;
+import com.system.payments.PaymentSchedule;
+import com.system.payments.TimeCard;
+import com.system.payments.Sale;
+import com.system.payments.ServiceFee;
+import com.system.people.Commissioned;
+import com.system.people.Hourly;
+import com.system.people.Salaried;
 
-import javax.xml.crypto.Data;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -29,13 +26,13 @@ public class Main {
 
   DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-  Scanner scan = new Scanner(new File("entrada"));
-  //Scanner scan = new Scanner(System.in);
+  //Scanner scan = new Scanner(new File("input"));
+  Scanner scan = new Scanner(System.in);
 
   public Main() throws FileNotFoundException {
   }
 
-  public int selecionarEmpregado(int kind, ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
+  public int selectEmployee(int kind, ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
 
     int i = 0;
     switch (kind) {
@@ -44,7 +41,7 @@ public class Main {
         for (Hourly emp : listHourly) {
 
           i = listHourly.indexOf(emp);
-          System.out.println(i + " - ID: " + emp.getID() + "; Nome: " + emp.getNome());
+          System.out.println(i + " - id: " + emp.getId() + "; Name: " + emp.getName());
 
         }
         break;
@@ -52,78 +49,78 @@ public class Main {
         for (Salaried emp : listSalaried) {
 
           i = listSalaried.indexOf(emp);
-          System.out.println(i + " - ID: " + emp.getID() + "; Nome: " + emp.getNome());
+          System.out.println(i + " - id: " + emp.getId() + "; Name: " + emp.getName());
         }
         break;
       case 3:
         for (Commissioned emp : listCommissioned) {
 
           i = listCommissioned.indexOf(emp);
-          System.out.println(i + " - ID: " + emp.getID() + "; Nome: " + emp.getNome());
+          System.out.println(i + " - id: " + emp.getId() + "; Name: " + emp.getName());
         }
         break;
     }
 
-    System.out.println("Selecione o empregado (-1 == Nenhum): ");
+    System.out.println("Select a employee (-1 == None): ");
     int selected = scan.nextInt();
 
     return (selected);
   }
 
-  public int adicionarEmpregado(int ID, ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
+  public int addEmployee(int ID, ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
 
-    System.out.println("----Adicionar Empregado----");
+    System.out.println("----Add Employee----");
 
-    System.out.printf("Nome: ");
-    String nome = scan.nextLine();
-    System.out.printf("Endereço: ");
-    String endereço = scan.nextLine();
+    System.out.printf("Name: ");
+    String name = scan.nextLine();
+    System.out.printf("Address: ");
+    String address = scan.nextLine();
 
     System.out.printf("Tipo: ");
-    String tipo = scan.nextLine();
+    String kind = scan.nextLine();
 
-    if (tipo.equalsIgnoreCase("Hourly")) {
+    if (kind.equalsIgnoreCase("Hourly")) {
 
-      System.out.printf("Salário Horário: ");
-      double salárioHorário = scan.nextDouble();
+      System.out.printf("Wage: ");
+      double wage = scan.nextDouble();
 
-      Hourly hourly = new Hourly(ID, nome, endereço, salárioHorário);
+      Hourly hourly = new Hourly(ID, name, address, wage);
       listHourly.add(hourly);
-      System.out.println(hourly);
+      //System.out.println(hourly);
 
-    } else if (tipo.equalsIgnoreCase("Salaried")) {
+    } else if (kind.equalsIgnoreCase("Salaried")) {
 
-      System.out.printf("Salário Mensal: ");
-      double salárioMensal = scan.nextDouble();
+      System.out.printf("Salary: ");
+      double salary = scan.nextDouble();
 
-      Salaried salaried = new Salaried(ID, nome, endereço, salárioMensal);
+      Salaried salaried = new Salaried(ID, name, address, salary);
       listSalaried.add(salaried);
-      System.out.println(salaried);
+      //System.out.println(salaried);
 
     } else { // Commissioned
 
-      System.out.printf("Taxa de comissão: ");
-      double taxaDeComissão = scan.nextDouble();
+      System.out.printf("Commission Fee: ");
+      double commissionFee = scan.nextDouble();
 
-      Commissioned comissioned = new Commissioned(ID, nome, endereço, taxaDeComissão);
-      listCommissioned.add(comissioned);
-      System.out.println(comissioned);
+      Commissioned commissioned = new Commissioned(ID, name, address, commissionFee);
+      listCommissioned.add(commissioned);
+      //System.out.println(commissioned);
 
     }
 
     return (ID + 1);
   }
 
-  public void removerEmpregado(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
+  public void removeEmployee(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
 
-    System.out.println("----Remover Empregado----");
-    System.out.println("1 - Empregados Horistas");
-    System.out.println("2 - Empregados Salariados");
-    System.out.println("3 - Empregados Comissionados");
+    System.out.println("----Remove Employee----");
+    System.out.println("1 - Hourly Employees");
+    System.out.println("2 - Salaried Employees");
+    System.out.println("3 - Commissioned Employees");
 
     int command = scan.nextInt();
 
-    int selected = selecionarEmpregado(command, listHourly, listSalaried, listCommissioned);
+    int selected = selectEmployee(command, listHourly, listSalaried, listCommissioned);
 
     if (selected == -1) {
 
@@ -145,59 +142,59 @@ public class Main {
         break;
     }
 
-    System.out.println("Usuário removido com sucesso!");
+    System.out.println("Employee successfully removed!");
 
   }
 
-  public void lançarCartãoDePonto(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
+  public void launchTimeCard(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
 
-    int selected = selecionarEmpregado(1, listHourly, listSalaried, listCommissioned);
+    int selected = selectEmployee(1, listHourly, listSalaried, listCommissioned);
 
     if (selected == -1) {
       return;
     }
     scan.nextLine();
 
-    Date data = dateFormat.parse(scan.nextLine());
-    double horasTrabalhadas = scan.nextDouble();
+    Date date = dateFormat.parse(scan.nextLine());
+    double workedHours = scan.nextDouble();
 
-    data = listHourly.get(selected).agendaDePagamento.novaDataDePagamento(data);
+    date = listHourly.get(selected).paymentSchedule.newPaymentDay(date);
 
-    listHourly.get(selected).lançarCartãoDePonto(data, horasTrabalhadas);
-    System.out.println(listHourly.get(selected));
-    System.out.println("Cartão de Ponto lançado com sucesso!\n");
+    listHourly.get(selected).lançarCartãoDePonto(date, workedHours);
+    //System.out.println(listHourly.get(selected));
+    System.out.println("Time Card successfully launched!\n");
 
   }
 
-  public void lançarResultadoDeVenda(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
+  public void launchSale(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
 
-    int selected = selecionarEmpregado(3, listHourly, listSalaried, listCommissioned);
+    int selected = selectEmployee(3, listHourly, listSalaried, listCommissioned);
 
     if (selected == -1) {
       return;
     }
     scan.nextLine();
 
-    Date data = dateFormat.parse(scan.nextLine());
-    double valorDaVenda = scan.nextDouble();
+    Date date = dateFormat.parse(scan.nextLine());
+    double saleValue = scan.nextDouble();
 
-    data = listCommissioned.get(selected).agendaDePagamento.novaDataDePagamento(data);
+    date = listCommissioned.get(selected).paymentSchedule.newPaymentDay(date);
 
-    listCommissioned.get(selected).lançarResultadoDeVenda(data, valorDaVenda);
-    System.out.println(listHourly.get(selected));
-    System.out.println("Resultado de Venda lançado com sucesso!\n");
+    listCommissioned.get(selected).launchSaleResult(date, saleValue);
+    //System.out.println(listHourly.get(selected));
+    System.out.println("Sale successfully launched!\n");
   }
 
-  public void lançarTaxaDeServiço(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
+  public void launchServiceFee(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
 
-    System.out.println("----Lançar Taxa de Serviço----");
-    System.out.println("1 - Empregados Horistas");
-    System.out.println("2 - Empregados Salariados");
-    System.out.println("3 - Empregados Comissionados");
+    System.out.println("----Launch Service Fee----");
+    System.out.println("1 - Hourly Employees");
+    System.out.println("2 - Salaried Employees");
+    System.out.println("3 - Commissioned Employees");
 
     int command = scan.nextInt();
 
-    int selected = selecionarEmpregado(command, listHourly, listSalaried, listCommissioned);
+    int selected = selectEmployee(command, listHourly, listSalaried, listCommissioned);
 
     if (selected == -1) {
 
@@ -205,37 +202,37 @@ public class Main {
     }
     scan.nextLine();
 
-    Date data = dateFormat.parse(scan.nextLine());
-    double valorDaTaxa = scan.nextDouble();
+    Date date = dateFormat.parse(scan.nextLine());
+    double feeValue = scan.nextDouble();
 
     switch (command) {
       case 1:
-        data = listHourly.get(selected).agendaDePagamento.novaDataDePagamento(data);
-        listHourly.get(selected).lançarTaxaDeServiço(data, valorDaTaxa);
+        date = listHourly.get(selected).paymentSchedule.newPaymentDay(date);
+        listHourly.get(selected).launchServiceFee(date, feeValue);
         break;
       case 2:
-        data = listSalaried.get(selected).agendaDePagamento.novaDataDePagamento(data);
-        listSalaried.get(selected).lançarTaxaDeServiço(data, valorDaTaxa);
+        date = listSalaried.get(selected).paymentSchedule.newPaymentDay(date);
+        listSalaried.get(selected).launchServiceFee(date, feeValue);
         break;
       case 3:
-        data = listCommissioned.get(selected).agendaDePagamento.novaDataDePagamento(data);
-        listCommissioned.get(selected).lançarTaxaDeServiço(data, valorDaTaxa);
+        date = listCommissioned.get(selected).paymentSchedule.newPaymentDay(date);
+        listCommissioned.get(selected).launchServiceFee(date, feeValue);
         break;
       default:
         break;
     }
   }
 
-  public void alterarDetalhesDeUmEmpregado(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
+  public void editEmployeeDetails(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
 
-    System.out.println("----Alterar detalhes de um Empregado----");
-    System.out.println("1 - Empregados Horistas");
-    System.out.println("2 - Empregados Salariados");
-    System.out.println("3 - Empregados Comissionados");
+    System.out.println("----Edit Employee Details----");
+    System.out.println("1 - Hourly Employees");
+    System.out.println("2 - Salaried Employees");
+    System.out.println("3 - Commissioned Employees");
 
     int command = scan.nextInt();
 
-    int selected = selecionarEmpregado(command, listHourly, listSalaried, listCommissioned);
+    int selected = selectEmployee(command, listHourly, listSalaried, listCommissioned);
 
     if (selected == -1) {
 
@@ -243,27 +240,27 @@ public class Main {
     }
     scan.nextLine();
 
-    System.out.printf("Nome: ");
-    String nome = scan.nextLine();
-    System.out.printf("Endereço: ");
-    String endereço = scan.nextLine();
+    System.out.printf("Name: ");
+    String name = scan.nextLine();
+    System.out.printf("Address: ");
+    String address = scan.nextLine();
 
-    System.out.printf("Tipo: ");
-    String tipo = scan.nextLine();
+    System.out.printf("Kind: ");
+    String kind = scan.nextLine();
 
-    switch (command) { // Checa se é possível trocar o tipo
+    switch (command) { // Checa se é possível trocar o kind
 
       case 1:
-        if (listHourly.get(selected).getQuantidadeDeCartoões() > 0 && !tipo.equalsIgnoreCase("Hourly")) {
+        if (listHourly.get(selected).getQuantidadeDeCartoões() > 0 && !kind.equalsIgnoreCase("Hourly")) {
 
-          System.out.println("Você não pode alterar o tipo desse empregado!");
+          System.out.println("You can't edit this kind of employee!");
           return;
         }
         break;
       case 3:
-        if (listCommissioned.get(selected).getQuantidadeDeVendas() > 0 && tipo.equalsIgnoreCase("Commissioned")) {
+        if (listCommissioned.get(selected).getNumberOfSales() > 0 && kind.equalsIgnoreCase("Commissioned")) {
 
-          System.out.println("Você não pode alterar o tipo desse empregado!");
+          System.out.println("You can't edit this kind of employee!");
           return;
         }
         break;
@@ -272,47 +269,47 @@ public class Main {
     }
 
 
-    System.out.println("Método de Pagamento: ");
-    String métodoDePagamento = scan.nextLine();
+    System.out.println("Payment Method: ");
+    String paymentMethod = scan.nextLine();
 
     switch (command) {
 
       case 1:
-        listHourly.get(selected).setMétodoDePagamento(métodoDePagamento);
+        listHourly.get(selected).setPaymentMethod(paymentMethod);
         break;
       case 2:
-        listSalaried.get(selected).setMétodoDePagamento(métodoDePagamento);
+        listSalaried.get(selected).setPaymentMethod(paymentMethod);
         break;
       case 3:
-        listCommissioned.get(selected).setMétodoDePagamento(métodoDePagamento);
+        listCommissioned.get(selected).setPaymentMethod(paymentMethod);
         break;
       default:
         break;
     }
 
-    System.out.printf("Pertence ao sindicado: (S/N)");
-    String pertenceAoSindicato = scan.nextLine();
+    System.out.printf("Belongs to syndicate: (S/N)");
+    String isPartOfSyndicate = scan.nextLine();
 
-    if (pertenceAoSindicato.equalsIgnoreCase("S")) {
+    if (isPartOfSyndicate.equalsIgnoreCase("S")) {
 
       switch (command) {
 
         case 1:
-          if (!listHourly.get(selected).fazParteDoSindicato) {
-            listHourly.get(selected).setFazParteDoSindicato(true);
-            listHourly.get(selected).setIDNoSindicato(2 * 10000 + listHourly.get(selected).ID);
+          if (!listHourly.get(selected).isPartOfSyndicate) {
+            listHourly.get(selected).setPartOfSyndicate(true);
+            listHourly.get(selected).setIdInSyndicate(2 * 10000 + listHourly.get(selected).id);
           }
           break;
         case 2:
-          if (!listSalaried.get(selected).fazParteDoSindicato) {
-            listSalaried.get(selected).setFazParteDoSindicato(true);
-            listSalaried.get(selected).setIDNoSindicato(2 * 10000 + listSalaried.get(selected).ID);
+          if (!listSalaried.get(selected).isPartOfSyndicate) {
+            listSalaried.get(selected).setPartOfSyndicate(true);
+            listSalaried.get(selected).setIdInSyndicate(2 * 10000 + listSalaried.get(selected).id);
           }
           break;
         case 3:
-          if (!listCommissioned.get(selected).fazParteDoSindicato) {
-            listCommissioned.get(selected).setFazParteDoSindicato(true);
-            listCommissioned.get(selected).setIDNoSindicato(2 * 10000 + listCommissioned.get(selected).ID);
+          if (!listCommissioned.get(selected).isPartOfSyndicate) {
+            listCommissioned.get(selected).setPartOfSyndicate(true);
+            listCommissioned.get(selected).setIdInSyndicate(2 * 10000 + listCommissioned.get(selected).id);
           }
           break;
         default:
@@ -320,22 +317,22 @@ public class Main {
       }
     }
 
-    switch (tipo) { // Pode ser removido
+    switch (kind) { // Pode ser removido
 
       case "Hourly":
         switch (command) {
           case 1:
-            //listHourly.add(new Hourly(listHourly.get(selected).ID, nome, endereço, métodoDePagamento,
-              //listHourly.get(selected).IDNoSindicato, listHourly.get(selected).fazParteDoSindicato, listHourly.get(selected).getTaxas()));
+            //listHourly.add(new Hourly(listHourly.get(selected).id, name, address, paymentMethod,
+              //listHourly.get(selected).idInSyndicate, listHourly.get(selected).isPartOfSyndicate, listHourly.get(selected).getFees()));
             break;
           case 2:
-            listHourly.add(new Hourly(listSalaried.get(selected).ID, nome, endereço, métodoDePagamento,
-              listSalaried.get(selected).IDNoSindicato, listSalaried.get(selected).fazParteDoSindicato, listSalaried.get(selected).getTaxas()));
+            listHourly.add(new Hourly(listSalaried.get(selected).id, name, address, paymentMethod,
+              listSalaried.get(selected).idInSyndicate, listSalaried.get(selected).isPartOfSyndicate, listSalaried.get(selected).getFees()));
             listSalaried.remove(selected);
             break;
           case 3:
-            listHourly.add(new Hourly(listCommissioned.get(selected).ID, nome, endereço, métodoDePagamento,
-              listCommissioned.get(selected).IDNoSindicato, listCommissioned.get(selected).fazParteDoSindicato, listCommissioned.get(selected).getTaxas()));
+            listHourly.add(new Hourly(listCommissioned.get(selected).id, name, address, paymentMethod,
+              listCommissioned.get(selected).idInSyndicate, listCommissioned.get(selected).isPartOfSyndicate, listCommissioned.get(selected).getFees()));
             listCommissioned.remove(selected);
             break;
           default:
@@ -345,17 +342,17 @@ public class Main {
       case "Salaried":
         switch (command) {
           case 1:
-            listSalaried.add(new Salaried(listHourly.get(selected).ID, nome, endereço, métodoDePagamento,
-              listHourly.get(selected).IDNoSindicato, listHourly.get(selected).fazParteDoSindicato, listHourly.get(selected).getTaxas()));
+            listSalaried.add(new Salaried(listHourly.get(selected).id, name, address, paymentMethod,
+              listHourly.get(selected).idInSyndicate, listHourly.get(selected).isPartOfSyndicate, listHourly.get(selected).getFees()));
             listHourly.remove(selected);
             break;
           case 2:
-            //listSalaried.add(new Salaried(listSalaried.get(selected).ID, nome, endereço, métodoDePagamento,
-              //listSalaried.get(selected).IDNoSindicato, listSalaried.get(selected).fazParteDoSindicato, listSalaried.get(selected).getTaxas()));
+            //listSalaried.add(new Salaried(listSalaried.get(selected).id, name, address, paymentMethod,
+              //listSalaried.get(selected).idInSyndicate, listSalaried.get(selected).isPartOfSyndicate, listSalaried.get(selected).getFees()));
             break;
           case 3:
-            listSalaried.add(new Salaried(listCommissioned.get(selected).ID, nome, endereço, métodoDePagamento,
-              listCommissioned.get(selected).IDNoSindicato, listCommissioned.get(selected).fazParteDoSindicato, listCommissioned.get(selected).getTaxas()));
+            listSalaried.add(new Salaried(listCommissioned.get(selected).id, name, address, paymentMethod,
+              listCommissioned.get(selected).idInSyndicate, listCommissioned.get(selected).isPartOfSyndicate, listCommissioned.get(selected).getFees()));
             listCommissioned.remove(selected);
             break;
           default:
@@ -365,18 +362,18 @@ public class Main {
       case "Commissioned":
         switch (command) {
           case 1:
-            listCommissioned.add(new Commissioned(listHourly.get(selected).ID, nome, endereço, métodoDePagamento,
-              listHourly.get(selected).IDNoSindicato, listHourly.get(selected).fazParteDoSindicato, listHourly.get(selected).getTaxas()));
+            listCommissioned.add(new Commissioned(listHourly.get(selected).id, name, address, paymentMethod,
+              listHourly.get(selected).idInSyndicate, listHourly.get(selected).isPartOfSyndicate, listHourly.get(selected).getFees()));
             listHourly.remove(selected);
             break;
           case 2:
-            listCommissioned.add(new Commissioned(listSalaried.get(selected).ID, nome, endereço, métodoDePagamento,
-              listSalaried.get(selected).IDNoSindicato, listSalaried.get(selected).fazParteDoSindicato, listSalaried.get(selected).getTaxas()));
+            listCommissioned.add(new Commissioned(listSalaried.get(selected).id, name, address, paymentMethod,
+              listSalaried.get(selected).idInSyndicate, listSalaried.get(selected).isPartOfSyndicate, listSalaried.get(selected).getFees()));
             listSalaried.remove(selected);
             break;
           case 3:
-            //listCommissioned.add(new Commissioned(listCommissioned.get(selected).ID, nome, endereço, métodoDePagamento,
-              //listCommissioned.get(selected).IDNoSindicato, listCommissioned.get(selected).fazParteDoSindicato, listCommissioned.get(selected).getTaxas()));
+            //listCommissioned.add(new Commissioned(listCommissioned.get(selected).id, name, address, paymentMethod,
+              //listCommissioned.get(selected).idInSyndicate, listCommissioned.get(selected).isPartOfSyndicate, listCommissioned.get(selected).getFees()));
             break;
           default:
             break;
@@ -386,169 +383,169 @@ public class Main {
         break;
     }
 
-    System.out.println("Empregado alterado com sucesso!");
+    System.out.println("Employee successfully edited!");
   }
 
-  public void rodarFolhaDePagamento(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
+  public void runPayroll(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) throws ParseException {
 
-    System.out.println("----Rodar Folha de Pagamento----");
+    System.out.println("----Run Payroll----");
 
-    System.out.printf("Data inicial: ");
-    Date dataInicial = dateFormat.parse(scan.nextLine());
+    System.out.printf("Initial date: ");
+    Date initialDate = dateFormat.parse(scan.nextLine());
 
-    System.out.printf("Data final: ");
-    Date dataFinal = dateFormat.parse(scan.nextLine());
+    System.out.printf("Final date: ");
+    Date finalDate = dateFormat.parse(scan.nextLine());
 
-    double pagamentoTotal = 0;
+    double totalPayment = 0;
 
-    System.out.println("Horistas: ");
+    System.out.println("Hourly: ");
     for (Hourly hourly : listHourly) {
 
-      double pagamentoAtual = 0;
+      double currentPayment = 0;
 
-      for (CartãoDePonto cartão : hourly.getCartões()) {
+      for (TimeCard cartão : hourly.getCards()) {
 
-        if (cartão.getData().after(dataInicial) && cartão.getData().before(dataFinal)) {
+        if (cartão.getDate().after(initialDate) && cartão.getDate().before(finalDate)) {
 
-          if (cartão.getHorasTrabalhadas() > 8) {
+          if (cartão.getWorkedHours() > 8) {
 
-            pagamentoAtual += (cartão.getHorasTrabalhadas() * hourly.getSalárioHorário() * 1.5);
+            currentPayment += (cartão.getWorkedHours() * hourly.getWage() * 1.5);
           } else {
 
-            pagamentoAtual += (cartão.getHorasTrabalhadas() * hourly.getSalárioHorário());
+            currentPayment += (cartão.getWorkedHours() * hourly.getWage());
           }
 
         }
       }
 
-      for (TaxaDeServiço taxa : hourly.getTaxas()) {
+      for (ServiceFee taxa : hourly.getFees()) {
 
-        if (taxa.getData().after(dataInicial) && taxa.getData().before(dataFinal)) {
+        if (taxa.getDate().after(initialDate) && taxa.getDate().before(finalDate)) {
 
-          pagamentoAtual -= taxa.getValorDaTaxa();
+          currentPayment -= taxa.getFeeValue();
         }
       }
 
-      if (pagamentoAtual != 0) {
+      if (currentPayment != 0) {
 
-        System.out.println("\t" + hourly.getNome() + " R$" + pagamentoAtual + ", via: " + hourly.getMétodoDePagamento());
+        System.out.println("\t" + hourly.getName() + " R$" + currentPayment + ", via: " + hourly.getPaymentMethod());
       }
-      pagamentoTotal += pagamentoAtual;
+      totalPayment += currentPayment;
     }
 
-    System.out.println("Assalariados: ");
+    System.out.println("Salaried: ");
     for (Salaried salaried : listSalaried) {
 
-      double pagamentoAtual = 0;
+      double currentPayment = 0;
 
-      Date novaDataDePagamento = salaried.agendaDePagamento.novaDataDePagamento(dataInicial);
-      if (novaDataDePagamento.after(dataInicial) && novaDataDePagamento.before(dataFinal)) {
-        pagamentoAtual = salaried.getSalárioMensal();
+      Date novaDataDePagamento = salaried.paymentSchedule.newPaymentDay(initialDate);
+      if (novaDataDePagamento.after(initialDate) && novaDataDePagamento.before(finalDate)) {
+        currentPayment = salaried.getSalary();
       }
 
-      for (TaxaDeServiço taxa : salaried.getTaxas()) {
+      for (ServiceFee taxa : salaried.getFees()) {
 
-        if (taxa.getData().after(dataInicial) && taxa.getData().before(dataFinal)) {
+        if (taxa.getDate().after(initialDate) && taxa.getDate().before(finalDate)) {
 
-          pagamentoAtual -= taxa.getValorDaTaxa();
+          currentPayment -= taxa.getFeeValue();
         }
       }
 
-      if (pagamentoAtual != 0) {
+      if (currentPayment != 0) {
 
-        System.out.println("\t" + salaried.getNome() + " R$" + pagamentoAtual + ", via: " + salaried.getMétodoDePagamento());
+        System.out.println("\t" + salaried.getName() + " R$" + currentPayment + ", via: " + salaried.getPaymentMethod());
       }
-      pagamentoTotal += salaried.getSalárioMensal();
+      totalPayment += salaried.getSalary();
     }
 
-    System.out.println("Comissionados: ");
+    System.out.println("Commissioned: ");
     for (Commissioned commissioned : listCommissioned) {
 
-      double pagamentoAtual = 0;
-      for (Venda venda : commissioned.getVendas()) {
+      double currentPayment = 0;
+      for (Sale sale : commissioned.getSales()) {
 
-        if (venda.getData().after(dataInicial) && venda.getData().before(dataFinal)) {
+        if (sale.getDate().after(initialDate) && sale.getDate().before(finalDate)) {
 
-          pagamentoAtual += commissioned.getTaxaDeComissão() * venda.getValorDaVenda();
+          currentPayment += commissioned.getCommissionFee() * sale.getSaleValue();
         }
       }
 
-      for (TaxaDeServiço taxa : commissioned.getTaxas()) {
+      for (ServiceFee taxa : commissioned.getFees()) {
 
-        if (taxa.getData().after(dataInicial) && taxa.getData().before(dataFinal)) {
+        if (taxa.getDate().after(initialDate) && taxa.getDate().before(finalDate)) {
 
-          pagamentoAtual -= taxa.getValorDaTaxa();
+          currentPayment -= taxa.getFeeValue();
         }
       }
 
-      if (pagamentoAtual != 0) {
+      if (currentPayment != 0) {
 
-        System.out.println("\t" + commissioned.getNome() + " R$" + pagamentoAtual + ", via: " + commissioned.getMétodoDePagamento());
+        System.out.println("\t" + commissioned.getName() + " R$" + currentPayment + ", via: " + commissioned.getPaymentMethod());
       }
-      pagamentoTotal += pagamentoAtual;
+      totalPayment += currentPayment;
     }
 
-    System.out.println("O total é de: R$" + pagamentoTotal + "\n");
+    System.out.println("The total is: R$" + totalPayment + "\n");
   }
 
   public void undo(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned,
-                   Stack<ArrayList<Hourly>> pilhaUndoHourly, Stack<ArrayList<Salaried>> pilhaUndoSalaried, Stack<ArrayList<Commissioned>> pilhaUndoCommissioned,
-                   Stack<ArrayList<Hourly>> pilhaRedoHourly, Stack<ArrayList<Salaried>> pilhaRedoSalaried, Stack<ArrayList<Commissioned>> pilhaRedoCommissioned) {
+                   Stack<ArrayList<Hourly>> stackUndoHourly, Stack<ArrayList<Salaried>> stackUndoSalaried, Stack<ArrayList<Commissioned>> stackUndoCommissioned,
+                   Stack<ArrayList<Hourly>> stackRedoHourly, Stack<ArrayList<Salaried>> stackRedoSalaried, Stack<ArrayList<Commissioned>> stackRedoCommissioned) {
 
-    if (!pilhaUndoHourly.empty()) {
+    if (!stackUndoHourly.empty()) {
 
       Gson gson = new Gson();
       Type type = new TypeToken<ArrayList<Hourly>>() {}.getType();
-      String json = gson.toJson(pilhaUndoHourly.pop());
-      pilhaRedoHourly.push(gson.fromJson(json, type));
+      String json = gson.toJson(stackUndoHourly.pop());
+      stackRedoHourly.push(gson.fromJson(json, type));
 
       type = new TypeToken<ArrayList<Salaried>>() {}.getType();
-      json = gson.toJson(pilhaUndoSalaried.pop());
-      pilhaRedoSalaried.push(gson.fromJson(json, type));
+      json = gson.toJson(stackUndoSalaried.pop());
+      stackRedoSalaried.push(gson.fromJson(json, type));
 
       type = new TypeToken<ArrayList<Commissioned>>() {}.getType();
-      json = gson.toJson(pilhaUndoCommissioned.pop());
-      pilhaRedoCommissioned.push(gson.fromJson(json, type));
+      json = gson.toJson(stackUndoCommissioned.pop());
+      stackRedoCommissioned.push(gson.fromJson(json, type));
 
-      listHourly = pilhaUndoHourly.pop();
-      listSalaried = pilhaUndoSalaried.pop();
-      listCommissioned = pilhaUndoCommissioned.pop();
+      listHourly = stackUndoHourly.pop();
+      listSalaried = stackUndoSalaried.pop();
+      listCommissioned = stackUndoCommissioned.pop();
 
-      System.out.println("Undo concluído!");
+      System.out.println("Undone!");
     } else {
 
-      System.out.println("Não é possível dar undo!");
+      System.out.println("It's not possible to undo!");
     }
   }
 
   public void redo(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned,
-                   Stack<ArrayList<Hourly>> pilhaUndoHourly, Stack<ArrayList<Salaried>> pilhaUndoSalaried, Stack<ArrayList<Commissioned>> pilhaUndoCommissioned,
-                   Stack<ArrayList<Hourly>> pilhaRedoHourly, Stack<ArrayList<Salaried>> pilhaRedoSalaried, Stack<ArrayList<Commissioned>> pilhaRedoCommissioned) {
+                   Stack<ArrayList<Hourly>> stackUndoHourly, Stack<ArrayList<Salaried>> stackUndoSalaried, Stack<ArrayList<Commissioned>> stackUndoCommissioned,
+                   Stack<ArrayList<Hourly>> stackRedoHourly, Stack<ArrayList<Salaried>> stackRedoSalaried, Stack<ArrayList<Commissioned>> stackRedoCommissioned) {
 
-    if (!pilhaRedoHourly.empty()) {
+    if (!stackRedoHourly.empty()) {
 
-      listHourly = pilhaRedoHourly.pop();
-      listSalaried = pilhaRedoSalaried.pop();
-      listCommissioned = pilhaRedoCommissioned.pop();
+      listHourly = stackRedoHourly.pop();
+      listSalaried = stackRedoSalaried.pop();
+      listCommissioned = stackRedoCommissioned.pop();
 
-      System.out.println("Redo concluído!");
+      System.out.println("Redone!");
     } else {
 
-      System.out.println("Não é possível dar redo!");
+      System.out.println("It's not possible to redo!");
     }
   }
 
-  public void alterarAgendaDePagamento(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned,
-                                       ArrayList<AgendaDePagamento> listAgenda) {
+  public void editPaymentSchedule(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned,
+                                  ArrayList<PaymentSchedule> listSchedule) {
 
-    System.out.println("----Alterar Agenda de Pagamento----");
-    System.out.println("1 - Empregados Horistas");
-    System.out.println("2 - Empregados Salariados");
-    System.out.println("3 - Empregados Comissionados");
+    System.out.println("----Edit Payment Schedule----");
+    System.out.println("1 - Hourly Employees");
+    System.out.println("2 - Salaried Employees");
+    System.out.println("3 - Commissioned Employees");
 
     int command = scan.nextInt();
 
-    int selectedEmployee = selecionarEmpregado(command, listHourly, listSalaried, listCommissioned);
+    int selectedEmployee = selectEmployee(command, listHourly, listSalaried, listCommissioned);
 
     if (selectedEmployee == -1) {
 
@@ -556,35 +553,36 @@ public class Main {
     }
 
     int i = 0;
-    for (AgendaDePagamento agendaDePagamento : listAgenda) {
+    for (PaymentSchedule paymentSchedule : listSchedule) {
 
-      System.out.println(i + " - Período: " + agendaDePagamento.período + ", Dia: " + agendaDePagamento.dia);
+      System.out.println(i + " - Period: " + paymentSchedule.period + ", Day: " + paymentSchedule.day);
     }
-    System.out.printf("Agenda desejada: ");
-    int selectedAgenda = scan.nextInt();
+    System.out.printf("Select Schedule: ");
+    int selectedSchedule = scan.nextInt();
 
     switch (command) {
       case 1:
-        listHourly.get(selectedEmployee).setAgendaDePagamento(listAgenda.get(selectedAgenda));
+        listHourly.get(selectedEmployee).setPaymentSchedule(listSchedule.get(selectedSchedule));
         break;
       case 2:
-        listSalaried.get(selectedEmployee).setAgendaDePagamento(listAgenda.get(selectedAgenda));
+        listSalaried.get(selectedEmployee).setPaymentSchedule(listSchedule.get(selectedSchedule));
         break;
       case 3:
-        listCommissioned.get(selectedEmployee).setAgendaDePagamento(listAgenda.get(selectedAgenda));
+        listCommissioned.get(selectedEmployee).setPaymentSchedule(listSchedule.get(selectedSchedule));
     }
 
-    System.out.println("Agenda alterada com sucesso!");
+    System.out.println("Schedule successfully edited!");
   }
 
-  public void criarAgendaDePagamento(ArrayList<AgendaDePagamento> listAgenda) {
+  public void createPaymentSchedule(ArrayList<PaymentSchedule> listSchedule) {
 
-    System.out.printf("Período de pagamento: ");
+    System.out.println("----Create Payment Schedule----");
+    System.out.printf("Payment period: ");
     String periodo = scan.nextLine();
-    System.out.printf("Dia: ");
+    System.out.printf("Day: ");
     int dia = scan.nextInt();
 
-    listAgenda.add(new AgendaDePagamento(periodo, dia));
+    listSchedule.add(new PaymentSchedule(periodo, dia));
   }
 
   public static void main(String[] args) throws FileNotFoundException, ParseException {
@@ -598,79 +596,79 @@ public class Main {
     ArrayList<Hourly> listHourly = new ArrayList<>();
     ArrayList<Salaried> listSalaried = new ArrayList<>();
     ArrayList<Commissioned> listCommissioned = new ArrayList<>();
-    ArrayList<AgendaDePagamento> listAgenda = new ArrayList<>();
-    listAgenda.add(new AgendaDePagamento("semanalmente", 5));
-    listAgenda.add(new AgendaDePagamento("mensalmente", 32));
-    listAgenda.add(new AgendaDePagamento("bi-semanalmente", 5));
+    ArrayList<PaymentSchedule> listSchedule = new ArrayList<>();
+    listSchedule.add(new PaymentSchedule("weekly", 5));
+    listSchedule.add(new PaymentSchedule("monthly", 32));
+    listSchedule.add(new PaymentSchedule("bi-weekly", 5));
 
-    Stack<ArrayList<Hourly>> pilhaUndoHourly = new Stack<>();
-    pilhaUndoHourly.push(new ArrayList<Hourly>());
-    Stack<ArrayList<Salaried>> pilhaUndoSalaried = new Stack<>();
-    pilhaUndoSalaried.push(new ArrayList<Salaried>());
-    Stack<ArrayList<Commissioned>> pilhaUndoCommissioned = new Stack<>();
-    pilhaUndoCommissioned.push(new ArrayList<Commissioned>());
+    Stack<ArrayList<Hourly>> stackUndoHourly = new Stack<>();
+    stackUndoHourly.push(new ArrayList<Hourly>());
+    Stack<ArrayList<Salaried>> stackUndoSalaried = new Stack<>();
+    stackUndoSalaried.push(new ArrayList<Salaried>());
+    Stack<ArrayList<Commissioned>> stackUndoCommissioned = new Stack<>();
+    stackUndoCommissioned.push(new ArrayList<Commissioned>());
 
-    Stack<ArrayList<Hourly>> pilhaRedoHourly = new Stack<>();
-    Stack<ArrayList<Salaried>> pilhaRedoSalaried = new Stack<>();
-    Stack<ArrayList<Commissioned>> pilhaRedoCommissioned = new Stack<>();
+    Stack<ArrayList<Hourly>> stackRedoHourly = new Stack<>();
+    Stack<ArrayList<Salaried>> stackRedoSalaried = new Stack<>();
+    Stack<ArrayList<Commissioned>> stackRedoCommissioned = new Stack<>();
 
     while (true) {
 
       System.out.println("\n------------Menu------------");
-      System.out.println("1  - Adicionar empregrado: ");
-      System.out.println("2  - Remover empregado: ");
-      System.out.println("3  - Lançar cartão de ponto: ");
-      System.out.println("4  - Lançar resultado de venda: ");
-      System.out.println("5  - Lançar taxa de serviço: ");
-      System.out.println("6  - Alterar detalhes de um empregado: ");
-      System.out.println("7  - Rodar folha de pagamento: ");
+      System.out.println("1  - Add employee: ");
+      System.out.println("2  - Remove employee: ");
+      System.out.println("3  - Launch Time Card: ");
+      System.out.println("4  - Launch Sale: ");
+      System.out.println("5  - Launch Service Fee: ");
+      System.out.println("6  - Edit Employee Details: ");
+      System.out.println("7  - Run Payroll: ");
       System.out.println("8  - Undo: ");
       System.out.println("9  - Redo: ");
-      System.out.println("10 - Alterar Agenda de Pagamento: ");
-      System.out.println("11 - Criar Agenda de Pagamento: ");
-      System.out.println("12 - Sair");
+      System.out.println("10 - Edit Payment Schedule: ");
+      System.out.println("11 - Create Payment Schedule: ");
+      System.out.println("12 - Leave");
 
       int command = main.scan.nextInt();
       main.scan.nextLine();
 
       switch (command) {
         case 1:
-          ID = main.adicionarEmpregado(ID, listHourly, listSalaried, listCommissioned);
+          ID = main.addEmployee(ID, listHourly, listSalaried, listCommissioned);
           break;
         case 2:
-          main.removerEmpregado(listHourly, listSalaried, listCommissioned);
+          main.removeEmployee(listHourly, listSalaried, listCommissioned);
           break;
         case 3:
-          main.lançarCartãoDePonto(listHourly, listSalaried, listCommissioned);
+          main.launchTimeCard(listHourly, listSalaried, listCommissioned);
           break;
         case 4:
-          main.lançarResultadoDeVenda(listHourly, listSalaried, listCommissioned);
+          main.launchSale(listHourly, listSalaried, listCommissioned);
           break;
         case 5:
-          main.lançarTaxaDeServiço(listHourly, listSalaried, listCommissioned);
+          main.launchServiceFee(listHourly, listSalaried, listCommissioned);
           break;
         case 6:
-          main.alterarDetalhesDeUmEmpregado(listHourly, listSalaried, listCommissioned);
+          main.editEmployeeDetails(listHourly, listSalaried, listCommissioned);
           break;
         case 7:
-          main.rodarFolhaDePagamento(listHourly, listSalaried, listCommissioned);
+          main.runPayroll(listHourly, listSalaried, listCommissioned);
           break;
         case 8:
-          main.undo(listHourly, listSalaried, listCommissioned, pilhaUndoHourly, pilhaUndoSalaried, pilhaUndoCommissioned,
-            pilhaRedoHourly, pilhaRedoSalaried, pilhaRedoCommissioned);
+          main.undo(listHourly, listSalaried, listCommissioned, stackUndoHourly, stackUndoSalaried, stackUndoCommissioned,
+            stackRedoHourly, stackRedoSalaried, stackRedoCommissioned);
           break;
         case 9:
-          main.redo(listHourly, listSalaried, listCommissioned, pilhaUndoHourly, pilhaUndoSalaried, pilhaUndoCommissioned,
-            pilhaRedoHourly, pilhaRedoSalaried, pilhaRedoCommissioned);
+          main.redo(listHourly, listSalaried, listCommissioned, stackUndoHourly, stackUndoSalaried, stackUndoCommissioned,
+            stackRedoHourly, stackRedoSalaried, stackRedoCommissioned);
           break;
         case 10:
-          main.alterarAgendaDePagamento(listHourly, listSalaried, listCommissioned, listAgenda);
+          main.editPaymentSchedule(listHourly, listSalaried, listCommissioned, listSchedule);
           break;
         case 11:
-          main.criarAgendaDePagamento(listAgenda);
+          main.createPaymentSchedule(listSchedule);
           break;
         case 12:
-          System.out.printf("Até logo!");
+          System.out.printf("Good bye!");
           return;
         default:
           break;
@@ -681,17 +679,17 @@ public class Main {
         Type type = new TypeToken<ArrayList<Hourly>>() {
         }.getType();
         json = gson.toJson(listHourly);
-        pilhaUndoHourly.push(gson.fromJson(json, type));
+        stackUndoHourly.push(gson.fromJson(json, type));
 
         type = new TypeToken<ArrayList<Salaried>>() {
         }.getType();
         json = gson.toJson(listSalaried);
-        pilhaUndoSalaried.push(gson.fromJson(json, type));
+        stackUndoSalaried.push(gson.fromJson(json, type));
 
         type = new TypeToken<ArrayList<Commissioned>>() {
         }.getType();
         json = gson.toJson(listCommissioned);
-        pilhaUndoCommissioned.push(gson.fromJson(json, type));
+        stackUndoCommissioned.push(gson.fromJson(json, type));
       }
     }
 

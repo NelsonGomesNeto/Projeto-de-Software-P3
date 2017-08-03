@@ -10,6 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Person p1 = new Person();
+        p1.printSomething();
+        Person p2 = new Student();
+        p2.printSomething();
+
         Person person = new Person();
         person.setName("Nelson");
 

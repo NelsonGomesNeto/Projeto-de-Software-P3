@@ -8,6 +8,10 @@ public class Student extends Person {
     public Student() {
     }
 
+    public void printSomething() {
+        System.out.println("Student");
+    }
+
     public void study() {
 
     }

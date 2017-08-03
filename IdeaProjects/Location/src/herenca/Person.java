@@ -18,6 +18,10 @@ public class Person {
         this.name = name;
     }
 
+    public void printSomething() {
+        System.out.println("Person");
+    }
+
     @Override
     public String toString() {
         return super.toString();
