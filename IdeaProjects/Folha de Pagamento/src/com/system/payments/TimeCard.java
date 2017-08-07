@@ -5,30 +5,22 @@ import java.util.Date;
 /**
  * Created by alunoic on 28/07/17.
  */
-public class TimeCard {
-
-    private Date date;
-    private double workedHours;
+public class TimeCard extends Payment {
 
     public TimeCard(Date date, double workedHours) {
 
-        this.date = date;
-        this.workedHours = workedHours;
-    }
-
-    public Date getDate() {
-        return this.date;
+        super(date, workedHours);
     }
 
     public double getWorkedHours() {
-        return this.workedHours;
+        return super.getValue();
     }
 
     @Override
     public String toString() {
         return "TimeCard{" +
-                "date=" + date +
-                ", workedHours=" + workedHours +
+                "date=" + getDate() +
+                ", workedHours=" + getWorkedHours() +
                 '}';
     }
 }

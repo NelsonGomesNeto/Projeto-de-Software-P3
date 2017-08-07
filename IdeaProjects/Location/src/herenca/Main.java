@@ -10,21 +10,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Person p1 = new Person();
-        p1.printSomething();
+        //Person p1 = new Person();
+        //p1.printSomething();
         Person p2 = new Student();
         p2.printSomething();
 
-        Person person = new Person();
-        person.setName("Nelson");
+        //Person person = new Person();
+        //person.setName("Nelson");
 
-        System.out.println(person.toString());
+        //System.out.println(person.toString());
 
         Student student = new Student();
 
-        Person p = new Student();
+        //Person p = new Student();
 
-        Person f = new Faculty();
+        //Person f = new Faculty();
 
         // But can't do: Student/Faculty l = new Person()
         // Because not every Student/Faculty is a Person!

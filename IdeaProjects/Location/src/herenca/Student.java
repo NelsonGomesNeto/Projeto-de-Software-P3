@@ -12,6 +12,11 @@ public class Student extends Person {
         System.out.println("Student");
     }
 
+    @Override
+    public void display() {
+
+    }
+
     public void study() {
 
     }

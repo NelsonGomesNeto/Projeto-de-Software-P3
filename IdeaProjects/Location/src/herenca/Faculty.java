@@ -7,4 +7,9 @@ public class Faculty extends Person {
 
     public Faculty() {
     }
+
+    @Override
+    public void display() {
+
+    }
 }

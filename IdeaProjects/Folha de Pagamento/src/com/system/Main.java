@@ -26,8 +26,8 @@ public class Main {
 
   DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-  //Scanner scan = new Scanner(new File("input"));
-  Scanner scan = new Scanner(System.in);
+  Scanner scan = new Scanner(new File("input"));
+  //Scanner scan = new Scanner(System.in);
 
   public Main() throws FileNotFoundException {
   }

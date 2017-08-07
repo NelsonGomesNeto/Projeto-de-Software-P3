@@ -3,7 +3,7 @@ package herenca;
 /**
  * Created by alunoic on 24/07/17.
  */
-public class Person {
+public abstract class Person {
 
     private String name;
 
@@ -21,6 +21,8 @@ public class Person {
     public void printSomething() {
         System.out.println("Person");
     }
+
+    public abstract void display();
 
     @Override
     public String toString() {
