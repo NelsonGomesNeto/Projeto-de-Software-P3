@@ -18,6 +18,15 @@ public class Hourly extends Employee {
   public Hourly() {
   }
 
+  public Hourly(Hourly hourly) {
+    super(hourly);
+
+    this.wage = hourly.wage;
+    for (TimeCard card : hourly.cards) {
+      this.cards.add(new TimeCard(card));
+    }
+  }
+
   public Hourly(int ID, String name, String address, double wage) {
     super(ID, name, address);
 

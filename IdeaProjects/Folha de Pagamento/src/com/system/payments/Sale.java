@@ -7,20 +7,25 @@ import java.util.Date;
  */
 public class Sale extends Payment {
 
-    public Sale(Date date, double saleValue) {
+  public Sale(Date date, double saleValue) {
 
-        super(date, saleValue);
-    }
+    super(date, saleValue);
+  }
 
-    public double getSaleValue() {
+  public Sale(Sale sale) {
+
+    super(sale);
+  }
+
+  public double getSaleValue() {
         return getValue();
     }
 
     @Override
     public String toString() {
-        return "Sale{" +
-                "date=" + getDate() +
-                ", saleValue=" + getSaleValue() +
-                '}';
+      return "Sale{" +
+              "date=" + getDate() +
+              ", saleValue=" + getSaleValue() +
+              '}';
     }
 }

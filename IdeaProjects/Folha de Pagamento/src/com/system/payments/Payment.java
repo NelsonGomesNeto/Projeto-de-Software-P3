@@ -2,10 +2,19 @@ package com.system.payments;
 
 import java.util.Date;
 
-public class Payment {
+public abstract class Payment {
 
 	private Date date;
 	private double value;
+
+	public Payment() {
+	}
+
+	public Payment(Payment payment) {
+
+		this.date = payment.date;
+		this.value = payment.value;
+	}
 
 	public Payment(Date date, double value) {
 

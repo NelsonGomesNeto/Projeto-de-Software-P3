@@ -15,6 +15,12 @@ public class Salaried extends Employee {
   public Salaried() {
   }
 
+  public Salaried(Salaried salaried) {
+    super(salaried);
+
+    this.salary = salaried.salary;
+  }
+
   public Salaried(int ID, String name, String address, double salary) {
     super(ID, name, address);
 

@@ -19,6 +19,15 @@ public class Commissioned extends Employee {
     super();
   }
 
+  public Commissioned(Commissioned commissioned) {
+    super(commissioned);
+
+    this.commissionFee = commissioned.commissionFee;
+    for (Sale sale : commissioned.sales) {
+      this.sales.add(new Sale(sale));
+    }
+  }
+
   public Commissioned(int id, String name, String address) {
     super(id, name, address);
   }

@@ -7,20 +7,24 @@ import java.util.Date;
  */
 public class ServiceFee extends Payment {
 
-    public ServiceFee(Date date, double feeValue) {
+  public ServiceFee(Date date, double feeValue) {
 
-        super(date, feeValue);
-    }
+    super(date, feeValue);
+  }
 
-    public double getFeeValue() {
-        return getValue();
-    }
+  public ServiceFee(ServiceFee serviceFee) {
+    super(serviceFee);
+  }
 
-    @Override
-    public String toString() {
-        return "ServiceFee{" +
-                "date=" + getDate() +
-                ", feeValue=" + getFeeValue() +
-                '}';
-    }
+  public double getFeeValue() {
+    return getValue();
+  }
+
+  @Override
+  public String toString() {
+    return "ServiceFee{" +
+      "date=" + getDate() +
+      ", feeValue=" + getFeeValue() +
+      '}';
+  }
 }

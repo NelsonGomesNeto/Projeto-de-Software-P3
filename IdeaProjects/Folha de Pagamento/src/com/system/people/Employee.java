@@ -26,6 +26,19 @@ public class Employee {
   public Employee() {
   }
 
+  public Employee(Employee employee) {
+
+    this.id = employee.id;
+    this.name = employee.name;
+    this.address = employee.address;
+    this.paymentMethod = employee.paymentMethod;
+    this.idInSyndicate = employee.idInSyndicate;
+    this.isPartOfSyndicate = employee.isPartOfSyndicate;
+    for (ServiceFee fee : employee.fees) {
+      this.fees.add(new ServiceFee(fee));
+    }
+  }
+
   public Employee(int id, String name, String address) {
 
     this.id = id;

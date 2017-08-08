@@ -8,8 +8,11 @@ import java.util.Date;
 public class TimeCard extends Payment {
 
     public TimeCard(Date date, double workedHours) {
-
         super(date, workedHours);
+    }
+
+    public TimeCard(TimeCard timeCard) {
+        super(timeCard);
     }
 
     public double getWorkedHours() {
@@ -19,8 +22,8 @@ public class TimeCard extends Payment {
     @Override
     public String toString() {
         return "TimeCard{" +
-                "date=" + getDate() +
-                ", workedHours=" + getWorkedHours() +
-                '}';
+          "date=" + getDate() +
+          ", workedHours=" + getWorkedHours() +
+          '}';
     }
 }
