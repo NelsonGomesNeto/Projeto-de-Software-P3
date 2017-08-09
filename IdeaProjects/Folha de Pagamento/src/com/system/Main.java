@@ -2,6 +2,7 @@ package com.system;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.system.database.DataBase;
 import com.system.payments.PaymentSchedule;
 import com.system.payments.TimeCard;
 import com.system.payments.Sale;
@@ -10,6 +11,7 @@ import com.system.people.Commissioned;
 import com.system.people.Hourly;
 import com.system.people.Salaried;
 
+import javax.xml.crypto.Data;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Type;
@@ -403,26 +405,26 @@ public class Main {
 
       double currentPayment = 0;
 
-      for (TimeCard cartão : hourly.getCards()) {
+      for (TimeCard card : hourly.getCards()) {
 
-        if (cartão.getDate().after(initialDate) && cartão.getDate().before(finalDate)) {
+        if (card.getDate().after(initialDate) && card.getDate().before(finalDate)) {
 
-          if (cartão.getWorkedHours() > 8) {
+          if (card.getWorkedHours() > 8) {
 
-            currentPayment += (cartão.getWorkedHours() * hourly.getWage() * 1.5);
+            currentPayment += (card.getWorkedHours() * hourly.getWage() * 1.5);
           } else {
 
-            currentPayment += (cartão.getWorkedHours() * hourly.getWage());
+            currentPayment += (card.getWorkedHours() * hourly.getWage());
           }
 
         }
       }
 
-      for (ServiceFee taxa : hourly.getFees()) {
+      for (ServiceFee fee : hourly.getFees()) {
 
-        if (taxa.getDate().after(initialDate) && taxa.getDate().before(finalDate)) {
+        if (fee.getDate().after(initialDate) && fee.getDate().before(finalDate)) {
 
-          currentPayment -= taxa.getFeeValue();
+          currentPayment -= fee.getFeeValue();
         }
       }
 
@@ -438,16 +440,16 @@ public class Main {
 
       double currentPayment = 0;
 
-      Date novaDataDePagamento = salaried.paymentSchedule.newPaymentDay(initialDate);
-      if (novaDataDePagamento.after(initialDate) && novaDataDePagamento.before(finalDate)) {
+      Date newPaymentDate = salaried.paymentSchedule.newPaymentDay(initialDate);
+      if (newPaymentDate.after(initialDate) && newPaymentDate.before(finalDate)) {
         currentPayment = salaried.getSalary();
       }
 
-      for (ServiceFee taxa : salaried.getFees()) {
+      for (ServiceFee fee : salaried.getFees()) {
 
-        if (taxa.getDate().after(initialDate) && taxa.getDate().before(finalDate)) {
+        if (fee.getDate().after(initialDate) && fee.getDate().before(finalDate)) {
 
-          currentPayment -= taxa.getFeeValue();
+          currentPayment -= fee.getFeeValue();
         }
       }
 
@@ -470,11 +472,11 @@ public class Main {
         }
       }
 
-      for (ServiceFee taxa : commissioned.getFees()) {
+      for (ServiceFee fee : commissioned.getFees()) {
 
-        if (taxa.getDate().after(initialDate) && taxa.getDate().before(finalDate)) {
+        if (fee.getDate().after(initialDate) && fee.getDate().before(finalDate)) {
 
-          currentPayment -= taxa.getFeeValue();
+          currentPayment -= fee.getFeeValue();
         }
       }
 
@@ -488,28 +490,15 @@ public class Main {
     System.out.println("The total is: R$" + totalPayment + "\n");
   }
 
-  public void undo(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned,
-                   Stack<ArrayList<Hourly>> stackUndoHourly, Stack<ArrayList<Salaried>> stackUndoSalaried, Stack<ArrayList<Commissioned>> stackUndoCommissioned,
-                   Stack<ArrayList<Hourly>> stackRedoHourly, Stack<ArrayList<Salaried>> stackRedoSalaried, Stack<ArrayList<Commissioned>> stackRedoCommissioned) {
+  public void undo(DataBase undo, DataBase redo, ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
 
-    if (!stackUndoHourly.empty()) {
+    if (undo.getSize() != 0) {
 
-      Gson gson = new Gson();
-      Type type = new TypeToken<ArrayList<Hourly>>() {}.getType();
-      String json = gson.toJson(stackUndoHourly.pop());
-      stackRedoHourly.push(gson.fromJson(json, type));
+      redo.pushAll(undo.popHourly(), undo.popSalaried(), undo.popCommissioned());
 
-      type = new TypeToken<ArrayList<Salaried>>() {}.getType();
-      json = gson.toJson(stackUndoSalaried.pop());
-      stackRedoSalaried.push(gson.fromJson(json, type));
-
-      type = new TypeToken<ArrayList<Commissioned>>() {}.getType();
-      json = gson.toJson(stackUndoCommissioned.pop());
-      stackRedoCommissioned.push(gson.fromJson(json, type));
-
-      listHourly = stackUndoHourly.pop();
-      listSalaried = stackUndoSalaried.pop();
-      listCommissioned = stackUndoCommissioned.pop();
+      listHourly = undo.popHourly();
+      listSalaried = undo.popSalaried();
+      listCommissioned = undo.popCommissioned();
 
       System.out.println("Undone!");
     } else {
@@ -518,15 +507,13 @@ public class Main {
     }
   }
 
-  public void redo(ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned,
-                   Stack<ArrayList<Hourly>> stackUndoHourly, Stack<ArrayList<Salaried>> stackUndoSalaried, Stack<ArrayList<Commissioned>> stackUndoCommissioned,
-                   Stack<ArrayList<Hourly>> stackRedoHourly, Stack<ArrayList<Salaried>> stackRedoSalaried, Stack<ArrayList<Commissioned>> stackRedoCommissioned) {
+  public void redo(DataBase undo, DataBase redo, ArrayList<Hourly> listHourly, ArrayList<Salaried> listSalaried, ArrayList<Commissioned> listCommissioned) {
 
-    if (!stackRedoHourly.empty()) {
+    if (redo.getSize() != 0) {
 
-      listHourly = stackRedoHourly.pop();
-      listSalaried = stackRedoSalaried.pop();
-      listCommissioned = stackRedoCommissioned.pop();
+      listHourly = redo.popHourly();
+      listSalaried = redo.popSalaried();
+      listCommissioned = redo.popCommissioned();
 
       System.out.println("Redone!");
     } else {
@@ -588,9 +575,9 @@ public class Main {
   public static void main(String[] args) throws FileNotFoundException, ParseException {
 
     Main main = new Main();
-    Gson gson = new Gson();
+    DataBase undo = new DataBase();
+    DataBase redo = new DataBase();
 
-    String json;
     int ID = 0;
 
     ArrayList<Hourly> listHourly = new ArrayList<>();
@@ -601,16 +588,7 @@ public class Main {
     listSchedule.add(new PaymentSchedule("monthly", 32));
     listSchedule.add(new PaymentSchedule("bi-weekly", 5));
 
-    Stack<ArrayList<Hourly>> stackUndoHourly = new Stack<>();
-    stackUndoHourly.push(new ArrayList<Hourly>());
-    Stack<ArrayList<Salaried>> stackUndoSalaried = new Stack<>();
-    stackUndoSalaried.push(new ArrayList<Salaried>());
-    Stack<ArrayList<Commissioned>> stackUndoCommissioned = new Stack<>();
-    stackUndoCommissioned.push(new ArrayList<Commissioned>());
-
-    Stack<ArrayList<Hourly>> stackRedoHourly = new Stack<>();
-    Stack<ArrayList<Salaried>> stackRedoSalaried = new Stack<>();
-    Stack<ArrayList<Commissioned>> stackRedoCommissioned = new Stack<>();
+    undo.pushAll(listHourly, listSalaried, listCommissioned);
 
     while (true) {
 
@@ -654,12 +632,10 @@ public class Main {
           main.runPayroll(listHourly, listSalaried, listCommissioned);
           break;
         case 8:
-          main.undo(listHourly, listSalaried, listCommissioned, stackUndoHourly, stackUndoSalaried, stackUndoCommissioned,
-            stackRedoHourly, stackRedoSalaried, stackRedoCommissioned);
+          main.undo(undo, redo, listHourly, listSalaried, listCommissioned);
           break;
         case 9:
-          main.redo(listHourly, listSalaried, listCommissioned, stackUndoHourly, stackUndoSalaried, stackUndoCommissioned,
-            stackRedoHourly, stackRedoSalaried, stackRedoCommissioned);
+          main.redo(undo, redo, listHourly, listSalaried, listCommissioned);
           break;
         case 10:
           main.editPaymentSchedule(listHourly, listSalaried, listCommissioned, listSchedule);
@@ -676,20 +652,7 @@ public class Main {
 
       if (command != 8 && command != 9 && command != 7 && command != 12) {
 
-        Type type = new TypeToken<ArrayList<Hourly>>() {
-        }.getType();
-        json = gson.toJson(listHourly);
-        stackUndoHourly.push(gson.fromJson(json, type));
-
-        type = new TypeToken<ArrayList<Salaried>>() {
-        }.getType();
-        json = gson.toJson(listSalaried);
-        stackUndoSalaried.push(gson.fromJson(json, type));
-
-        type = new TypeToken<ArrayList<Commissioned>>() {
-        }.getType();
-        json = gson.toJson(listCommissioned);
-        stackUndoCommissioned.push(gson.fromJson(json, type));
+        undo.pushAll(listHourly, listSalaried, listCommissioned);
       }
     }
 

@@ -26,7 +26,7 @@ public class Employee {
   public Employee() {
   }
 
-  public Employee(Employee employee) {
+  public Employee(Employee employee){
 
     this.id = employee.id;
     this.name = employee.name;
