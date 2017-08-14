@@ -29,25 +29,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/system/Main.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/system/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="133" column="13" lean-forward="true" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
+            <state relative-caret-position="252">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Main#0;class#Main#0" expanded="false" />
-                <element signature="method#selectEmployee#0;class#Main#0" expanded="false" />
-                <element signature="method#addEmployee#0;class#Main#0" expanded="false" />
-                <element signature="method#launchTimeCard#0;class#Main#0" expanded="false" />
-                <element signature="method#launchSale#0;class#Main#0" expanded="false" />
-                <element signature="method#launchServiceFee#0;class#Main#0" expanded="false" />
-                <element signature="method#editEmployeeDetails#0;class#Main#0" expanded="false" />
-                <element signature="method#runPayroll#0;class#Main#0" expanded="false" />
-                <element signature="method#undo#0;class#Main#0" expanded="false" />
-                <element signature="method#redo#0;class#Main#0" expanded="false" />
-                <element signature="method#editPaymentSchedule#0;class#Main#0" expanded="false" />
-                <element signature="method#createPaymentSchedule#0;class#Main#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PayrollSystem.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/system/main/PayrollSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="265" column="3" lean-forward="true" selection-start-line="265" selection-start-column="3" selection-end-line="265" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#PayrollSystem#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#runMenu#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#selectEmployee#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#addEmployee#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#removeEmployee#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#launchTimeCard#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#launchSale#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#launchServiceFee#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#editEmployeeDetails#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#runPayroll#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#undo#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#redo#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#editPaymentSchedule#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#createPaymentSchedule#0;class#PayrollSystem#0" expanded="false" />
+                <element signature="method#loadInputFromFile#0;class#PayrollSystem#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -56,7 +71,7 @@
       <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/system/database/DataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="51">
               <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,7 +83,7 @@
       <file leaf-file-name="Hourly.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/system/people/Hourly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="0">
               <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,7 +95,7 @@
       <file leaf-file-name="PaymentSchedule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/system/payments/PaymentSchedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="0">
               <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -94,8 +109,8 @@
       <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/system/people/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Employee#0" expanded="false" />
@@ -112,8 +127,8 @@
       <file leaf-file-name="Payment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/system/payments/Payment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+            <state relative-caret-position="0">
+              <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -150,6 +165,7 @@
       <find>horasTrabalhadas</find>
       <find>taxaDeComissão</find>
       <find>nicial</find>
+      <find>java.lang.</find>
     </findStrings>
     <replaceStrings>
       <replace>listCommissioned</replace>
@@ -208,9 +224,13 @@
         <option value="$PROJECT_DIR$/src/com/system/people/Hourly.java" />
         <option value="$PROJECT_DIR$/src/com/system/payments/TimeCard.java" />
         <option value="$PROJECT_DIR$/src/com/system/payments/Payment.java" />
-        <option value="$PROJECT_DIR$/src/com/system/database/DataBase.java" />
         <option value="$PROJECT_DIR$/src/com/system/people/Employee.java" />
         <option value="$PROJECT_DIR$/src/com/system/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/system/main/MainMethods.java" />
+        <option value="$PROJECT_DIR$/src/com/system/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/system/database/DataBase.java" />
+        <option value="$PROJECT_DIR$/src/com/system/main/System.java" />
+        <option value="$PROJECT_DIR$/src/com/system/main/PayrollSystem.java" />
       </list>
     </option>
   </component>
@@ -228,10 +248,93 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="213" />
-    <option name="y" value="178" />
-    <option name="width" value="1440" />
-    <option name="height" value="1053" />
+    <option name="x" value="334" />
+    <option name="y" value="116" />
+    <option name="width" value="1233" />
+    <option name="height" value="810" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness &gt; Messages</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Security</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability &gt; Icons</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Dependency issuesJava</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>ImportsJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 8Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Javadoc issuesJava</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>Reflective access issuesJava</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+          <State>
+            <id>Visibility issuesJava</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -249,7 +352,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,6 +382,13 @@
               <item name="Folha de Pagamento" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Folha de Pagamento" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Folha de Pagamento" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
               <item name="payments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -293,16 +402,17 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libr/gson-2.8.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -322,7 +432,7 @@
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.system.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.system.main.Main" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -563,37 +673,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32702702" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32622603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4477612" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44864866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21060172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21041666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.49864864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1440" y="-347" width="1920" height="1017" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +721,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="70" />
+      <option name="time" value="74" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -626,22 +736,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/system/people/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Employee#0" expanded="false" />
-            <element signature="method#Employee#0;class#Employee#0" expanded="false" />
-            <element signature="method#Employee#3;class#Employee#0" expanded="false" />
-            <element signature="method#setIdInSyndicate#0;class#Employee#0" expanded="false" />
-            <element signature="method#launchServiceFee#0;class#Employee#0" expanded="false" />
-            <element signature="method#toString#0;class#Employee#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/system/people/Hourly.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -677,32 +771,18 @@
         <state relative-caret-position="357">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
             <element signature="e#271#272#0" expanded="true" />
             <element signature="e#302#303#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/system/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Main#0;class#Main#0" expanded="false" />
-            <element signature="method#selectEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#addEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#launchTimeCard#0;class#Main#0" expanded="false" />
-            <element signature="method#launchSale#0;class#Main#0" expanded="false" />
-            <element signature="method#launchServiceFee#0;class#Main#0" expanded="false" />
-            <element signature="method#editEmployeeDetails#0;class#Main#0" expanded="false" />
-            <element signature="method#runPayroll#0;class#Main#0" expanded="false" />
-            <element signature="method#undo#0;class#Main#0" expanded="false" />
-            <element signature="method#redo#0;class#Main#0" expanded="false" />
-            <element signature="method#editPaymentSchedule#0;class#Main#0" expanded="false" />
-            <element signature="method#createPaymentSchedule#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -748,32 +828,18 @@
         <state relative-caret-position="357">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
             <element signature="e#271#272#0" expanded="true" />
             <element signature="e#302#303#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/system/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Main#0;class#Main#0" expanded="false" />
-            <element signature="method#selectEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#addEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#launchTimeCard#0;class#Main#0" expanded="false" />
-            <element signature="method#launchSale#0;class#Main#0" expanded="false" />
-            <element signature="method#launchServiceFee#0;class#Main#0" expanded="false" />
-            <element signature="method#editEmployeeDetails#0;class#Main#0" expanded="false" />
-            <element signature="method#runPayroll#0;class#Main#0" expanded="false" />
-            <element signature="method#undo#0;class#Main#0" expanded="false" />
-            <element signature="method#redo#0;class#Main#0" expanded="false" />
-            <element signature="method#editPaymentSchedule#0;class#Main#0" expanded="false" />
-            <element signature="method#createPaymentSchedule#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -829,32 +895,18 @@
         <state relative-caret-position="357">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
             <element signature="e#271#272#0" expanded="true" />
             <element signature="e#302#303#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/system/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Main#0;class#Main#0" expanded="false" />
-            <element signature="method#selectEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#addEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#launchTimeCard#0;class#Main#0" expanded="false" />
-            <element signature="method#launchSale#0;class#Main#0" expanded="false" />
-            <element signature="method#launchServiceFee#0;class#Main#0" expanded="false" />
-            <element signature="method#editEmployeeDetails#0;class#Main#0" expanded="false" />
-            <element signature="method#runPayroll#0;class#Main#0" expanded="false" />
-            <element signature="method#undo#0;class#Main#0" expanded="false" />
-            <element signature="method#redo#0;class#Main#0" expanded="false" />
-            <element signature="method#editPaymentSchedule#0;class#Main#0" expanded="false" />
-            <element signature="method#createPaymentSchedule#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -863,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,8 +969,6 @@
         <state relative-caret-position="255">
           <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
           <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
             <element signature="e#271#272#0" expanded="true" />
             <element signature="e#302#303#0" expanded="true" />
           </folding>
@@ -933,24 +982,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/system/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="142" column="14" lean-forward="false" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Main#0;class#Main#0" expanded="false" />
-            <element signature="method#selectEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#addEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#launchTimeCard#0;class#Main#0" expanded="false" />
-            <element signature="method#launchSale#0;class#Main#0" expanded="false" />
-            <element signature="method#launchServiceFee#0;class#Main#0" expanded="false" />
-            <element signature="method#editEmployeeDetails#0;class#Main#0" expanded="false" />
-            <element signature="method#runPayroll#0;class#Main#0" expanded="false" />
-            <element signature="method#undo#0;class#Main#0" expanded="false" />
-            <element signature="method#redo#0;class#Main#0" expanded="false" />
-            <element signature="method#editPaymentSchedule#0;class#Main#0" expanded="false" />
-            <element signature="method#createPaymentSchedule#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -959,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,8 +1050,6 @@
         <state relative-caret-position="240">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
             <element signature="e#271#272#0" expanded="true" />
             <element signature="e#302#303#0" expanded="true" />
           </folding>
@@ -1033,7 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,15 +1126,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/system/payments/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/system/people/Hourly.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
+        <state relative-caret-position="0">
           <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1111,7 +1144,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/system/payments/PaymentSchedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="0">
           <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1121,20 +1154,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/database/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/system/people/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Employee#0" expanded="false" />
@@ -1147,24 +1170,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/system/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/system/database/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="133" column="13" lean-forward="true" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
+        <state relative-caret-position="51">
+          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Main#0;class#Main#0" expanded="false" />
-            <element signature="method#selectEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#addEmployee#0;class#Main#0" expanded="false" />
-            <element signature="method#launchTimeCard#0;class#Main#0" expanded="false" />
-            <element signature="method#launchSale#0;class#Main#0" expanded="false" />
-            <element signature="method#launchServiceFee#0;class#Main#0" expanded="false" />
-            <element signature="method#editEmployeeDetails#0;class#Main#0" expanded="false" />
-            <element signature="method#runPayroll#0;class#Main#0" expanded="false" />
-            <element signature="method#undo#0;class#Main#0" expanded="false" />
-            <element signature="method#redo#0;class#Main#0" expanded="false" />
-            <element signature="method#editPaymentSchedule#0;class#Main#0" expanded="false" />
-            <element signature="method#createPaymentSchedule#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/system/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/system/main/PayrollSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="265" column="3" lean-forward="true" selection-start-line="265" selection-start-column="3" selection-end-line="265" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#PayrollSystem#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#runMenu#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#selectEmployee#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#addEmployee#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#removeEmployee#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#launchTimeCard#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#launchSale#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#launchServiceFee#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#editEmployeeDetails#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#runPayroll#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#undo#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#redo#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#editPaymentSchedule#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#createPaymentSchedule#0;class#PayrollSystem#0" expanded="false" />
+            <element signature="method#loadInputFromFile#0;class#PayrollSystem#0" expanded="false" />
           </folding>
         </state>
       </provider>
