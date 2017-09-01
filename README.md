@@ -2,6 +2,10 @@
 
 ## Cada projeto da disciplina está dentro da pasta "IdeaProjects" <br>
 
+## Sistema de Gerenciamento
+Está em "IdeaProjects/Sistema-de-Gerenciamento" <br>
+Até então, utilizei: Strategy, State, Decorator e Chain of Responsability.
+
 ## Folha de Pagamento (Payroll)
 Está em "IdeaProjects/Folha de Pagamento" <br>
 Foram cumpridos todos requisitos, mas o dia em que será feito o pagamento está sendo calculado por fazer ("o dia em que ele registra" + "o período especificado na agenda") (Usei "Calendar" para mexer na data), então, talvez não faça perfeitamente alguns casos, mas até onde testei, funcionava. E o Recurso de editar um empregado acaba recriando o empregado, mas, mantém suas propriedades.
