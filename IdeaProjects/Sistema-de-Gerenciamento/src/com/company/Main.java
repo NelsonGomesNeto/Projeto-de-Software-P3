@@ -153,7 +153,7 @@ public class Main {
       + horarioAtividade[i][1][2] + '/' + horarioAtividade[i][1][3] + '/' + horarioAtividade[i][1][4]);
     System.out.println("\t\tUsuário: " + atividade[i][2]);
     System.out.println("\t\tCPF: " + atividade[i][8]);
-    System.out.println("\t\tRecurso: " + atividade[i][3]);
+    System.out.println("\t\tResource: " + atividade[i][3]);
     System.out.println("\t\tParticipantes: " + atividade[i][5]);
     System.out.println("\t\tMaterial de Apoio: " + atividade[i][6]);
     System.out.println("\t\tStatus: " + atividade[i][7] + '\n');
@@ -193,7 +193,7 @@ public class Main {
   // Cadastra um recurso
   public void cadastrarRecurso() {
 
-    System.out.println("-------Cadastro de Recurso--------");
+    System.out.println("-------Cadastro de Resource--------");
 
     System.out.println("Digite a identificação: ");
     String identificacao = scan.nextLine();
@@ -214,7 +214,7 @@ public class Main {
     numeroDeAlocacoesPorRecurso[numeroDeRecursos] = 0;
     numeroDeRecursos += 1;
 
-    System.out.println("Recurso cadastrado com sucesso!\n");
+    System.out.println("Resource cadastrado com sucesso!\n");
   } // 2
 
   // Cadastra uma atividade (aloca um recurso)
@@ -222,11 +222,11 @@ public class Main {
 
     System.out.println("------Cadastro de Atividade-------");
 
-    System.out.println("Recurso desejado: ");
+    System.out.println("Resource desejado: ");
     String recursoDesejado = scan.nextLine();
     int idRecurso = getRecursoIdByName(recursoDesejado);
     if (idRecurso == 9999) {
-      System.out.println("Recurso não encontrado!\n");
+      System.out.println("Resource não encontrado!\n");
       return;
     }
 
@@ -318,7 +318,7 @@ public class Main {
     }
     totalDeAlocacoes += 1;
 
-    System.out.println("Recurso em processo de alocação!\n");
+    System.out.println("Resource em processo de alocação!\n");
   } // 3
 
   // Consulta (pesquisa) um usuário
@@ -365,7 +365,7 @@ public class Main {
   // Consulta (pesquisa) um recurso
   public void consultarRecurso() {
 
-    System.out.println("-------Consulta de Recurso--------");
+    System.out.println("-------Consulta de Resource--------");
 
     System.out.println("Pesquisar recurso: ");
     String recursoPesquisado = scan.nextLine();
@@ -373,7 +373,7 @@ public class Main {
 
     if (id == 9999) {
 
-      System.out.println("Recurso não encontrado!\n");
+      System.out.println("Resource não encontrado!\n");
     } else {
 
       System.out.println("Identificação: " + recurso[id][0]);
@@ -456,10 +456,10 @@ public class Main {
 
       System.out.println("----------Menu Principal----------");
       System.out.println("1 - Cadastrar Usuário");
-      System.out.println("2 - Cadastrar Recurso");
+      System.out.println("2 - Cadastrar Resource");
       System.out.println("3 - Cadastrar Atividade"); // Alocar recurso
       System.out.println("4 - Consultar Usuário");
-      System.out.println("5 - Consultar Recurso");
+      System.out.println("5 - Consultar Resource");
       System.out.println("6 - Visualizar Atividades");
       System.out.println("7 - Relatório");
       System.out.println("8 - Sair");
