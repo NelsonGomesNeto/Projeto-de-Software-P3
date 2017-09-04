@@ -9,8 +9,8 @@ import java.util.Date;
 
 public class TraditionalClass extends Activity {
 
-    public TraditionalClass(String title, User allocator, Resource resource, String description, ArrayList<User> participants, ArrayList<Resource> supportMaterial, State state, Date dateBegin, Date dateEnd) {
-        super(title, allocator, resource, description, participants, supportMaterial, state, dateBegin, dateEnd);
+    public TraditionalClass(String title, User allocator, Resource resource, String description, String participants, State state, Date dateBegin, Date dateEnd) {
+        super(title, allocator, resource, description, participants, state, dateBegin, dateEnd);
     }
 
     @Override

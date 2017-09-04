@@ -12,54 +12,82 @@ import java.util.ArrayList;
 
 public class DataBase {
 
-    ArrayList<Activity> activities;
-    ArrayList<Resource> resources;
-    ArrayList<User> users;
-    State allocating = new Allocating();
-    State allocated = new Allocated();
-    State completed = new Completed();
+	ArrayList<Activity> activities;
+	ArrayList<Resource> resources;
+	ArrayList<User> users;
+	public State allocating = new Allocating();
+	public State allocated = new Allocated();
+	public State completed = new Completed();
 
-    public DataBase() {
-        activities = new ArrayList<>();
-        resources = new ArrayList<>();
-        users = new ArrayList<>();
-    }
+	public DataBase() {
+		activities = new ArrayList<>();
+		resources = new ArrayList<>();
+		users = new ArrayList<>();
+	}
 
-    public void printAll(ArrayList arrayList) {
+	public void printAll(ArrayList arrayList) {
 
-        for (Object object : arrayList) {
+		int counter = 0;
+		for (Object object : arrayList) {
+			counter ++;
+			System.out.println(counter + " - " + object.toString());
+		}
+	}
 
-            System.out.println(object.toString());
-        }
-    }
+	public void report() {
 
-    public void report() {
+		System.out.println("Users:");
+		printAll(users);
+		System.out.println("Resources:");
+		printAll(resources);
+		System.out.println("Activities:");
+		printAll(activities);
+	}
 
-        printAll(activities);
-        printAll(resources);
-        printAll(users);
-    }
+	public boolean validCPF(String CPF) {
 
-    public boolean validCPF(String CPF) {
+		for (User user : users) {
+			if (user.getCPF().equalsIgnoreCase(CPF)) {
+				return false;
+			}
+		}
+		return true;
+	}
 
-        for (User user : users) {
-            if (user.getCPF().equalsIgnoreCase(CPF)) {
-                return false;
-            }
-        }
-        return true;
-    }
+	public ArrayList<Activity> getActivities() {
+		return activities;
+	}
 
-    public void addUser(User user) {
-        users.add(user);
-    }
+	public Resource getResourceByName(String name) {
 
-    public void addResource(Resource resource) {
-        resources.add(resource);
-    }
+		for (Resource resource : resources) {
+			if (resource.name.equalsIgnoreCase(name)) {
+				return(resource);
+			}
+		}
+		return(null);
+	}
 
-    public void addActivity(Activity activity) {
-        activities.add(activity);
-    }
+	public User getUserByName(String name) {
+
+		for (User user : users) {
+			if (user.getName().equalsIgnoreCase(name)) {
+				return(user);
+			}
+		}
+		return(null);
+	}
+
+	public void addUser(User user) {
+		users.add(user);
+	}
+
+	public void addResource(Resource resource) {
+		resources.add(resource);
+	}
+
+	public void addActivity(Activity activity) {
+		activities.add(activity);
+	}
 
 }

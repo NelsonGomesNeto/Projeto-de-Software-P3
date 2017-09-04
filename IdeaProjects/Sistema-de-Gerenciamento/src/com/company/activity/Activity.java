@@ -9,36 +9,48 @@ import java.util.Date;
 
 public abstract class Activity {
 
-    public String title;
-    public User allocator;
-    public Resource resource;
-    public String description;
-    private ArrayList<User> participants;
-    private ArrayList<Resource> supportMaterial;
-    public State state;
-    public Date dateBegin;
-    public Date dateEnd;
+	public String title;
+	public User allocator;
+	public Resource resource;
+	public String description;
+	//private ArrayList<User> participants;
+	private String participants;
+	//private ArrayList<Resource> supportMaterial;
+	public State state;
+	public Date dateBegin;
+	public Date dateEnd;
 
-    public Activity(String title, User allocator, Resource resource, String description, ArrayList<User> participants, ArrayList<Resource> supportMaterial, State state, Date dateBegin, Date dateEnd) {
+	public Activity(String title, User allocator, Resource resource, String description, String participants, State state, Date dateBegin, Date dateEnd) {
 
-        this.title = title;
-        this.allocator = allocator;
-        this.resource = resource;
-        this.description = description;
-        this.participants = participants;
-        this.supportMaterial = supportMaterial;
-        this.state = state;
-        this.dateBegin = dateBegin;
-        this.dateEnd = dateEnd;
-    }
+		this.title = title;
+		this.allocator = allocator;
+		this.resource = resource;
+		this.description = description;
+		this.participants = participants;
+		this.state = state;
+		this.dateBegin = dateBegin;
+		this.dateEnd = dateEnd;
+	}
 
-    public void setState(State state) {
-        this.state = state;
-    }
+	public void setState(State state) {
+		this.state = state;
+	}
 
-    public State getState() {
-        return state;
-    }
+	public State getState() {
+		return state;
+	}
 
-    public abstract String kind();
+	public abstract String kind();
+
+	@Override
+	public String toString() {
+		return "Title:        " + title + '\n' +
+					 "\tUser:         " + allocator.getName() + '\n' +
+					 "\tResource:     " + resource.getName() + '\n' +
+					 "\tDescription:  " + description + '\n' +
+			     "\tParticipants: " + participants + '\n' +
+					 "\tState:        " + state + '\n' +
+					 "\tStart time:   " + dateBegin + '\n' +
+					 "\tEnd time:     " + dateEnd;
+	}
 }
