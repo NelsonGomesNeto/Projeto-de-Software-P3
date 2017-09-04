@@ -37,6 +37,11 @@ public class SimpleUser implements User {
 	}
 
 	@Override
+	public boolean equals(Object object) {
+		return(this.CPF.equalsIgnoreCase(((User) object).getCPF()));
+	}
+
+	@Override
 	public boolean isAvailable(Date begin, Date end) {
 
 		for (Activity activity : activities) {

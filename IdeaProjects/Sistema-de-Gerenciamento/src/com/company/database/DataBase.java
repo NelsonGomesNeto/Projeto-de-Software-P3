@@ -9,6 +9,8 @@ import com.company.resource.Resource;
 import com.company.user.User;
 
 import java.util.ArrayList;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class DataBase {
 
@@ -68,14 +70,20 @@ public class DataBase {
 		return(null);
 	}
 
-	public User getUserByName(String name) {
+	public ArrayList<User> getUserByName(String name) {
 
-		for (User user : users) {
+		ArrayList<User> users = new ArrayList<>();
+		for (User user : this.users) {
 			if (user.getName().equalsIgnoreCase(name)) {
-				return(user);
+				users.add(user);
 			}
 		}
-		return(null);
+		return(users);
+	}
+
+	public void setUser(User user) {
+
+		this.users.set(this.users.indexOf(user), user);
 	}
 
 	public void addUser(User user) {

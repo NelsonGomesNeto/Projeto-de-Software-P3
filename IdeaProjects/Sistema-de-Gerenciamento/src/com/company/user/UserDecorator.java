@@ -34,6 +34,11 @@ public abstract class UserDecorator implements User {
 	}
 
 	@Override
+	public boolean equals(Object object) {
+		return(this.decoratedUser.getCPF().equalsIgnoreCase(((User) object).getCPF()));
+	}
+
+	@Override
 	public boolean isAvailable(Date begin, Date end) {
 		return(decoratedUser.isAvailable(begin, end));
 	}

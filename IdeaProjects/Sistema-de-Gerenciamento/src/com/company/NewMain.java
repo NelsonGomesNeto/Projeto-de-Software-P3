@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -27,15 +28,42 @@ public class NewMain {
 	public NewMain() throws FileNotFoundException {
 	}
 
+	public User selectUser(DataBase dataBase) {
+
+		System.out.printf("Enter user name: ");
+		String name = scanner.nextLine();
+
+		ArrayList<User> users = dataBase.getUserByName(name);
+
+		User user = null;
+		if (users.size() == 1) {
+
+			user = users.get(0);
+		} else if (users.size() > 1){
+
+			int counter = 0;
+			for (User userToFind : users) {
+				counter ++;
+				System.out.println(counter + " - " + userToFind.getCPF());
+			}
+			int selected = scanner.nextInt();
+			scanner.nextLine();
+			user = users.get(selected);
+		}
+
+		return(user);
+	}
+
 	public int selectUserKind() {
 
 		System.out.println("1 - Graduation Student");
-		System.out.println("2 - MasteringStudent Student");
+		System.out.println("2 - Mastering Student");
 		System.out.println("3 - PhD Student");
 		System.out.println("4 - Professor");
 		System.out.println("5 - Researcher");
 		System.out.println("6 - Administrator");
 
+		System.out.printf("Enter user kind: ");
 		int kind = scanner.nextInt();
 		scanner.nextLine();
 
@@ -61,6 +89,27 @@ public class NewMain {
 		}
 	}
 
+	public User decorateUser(User user) {
+
+		int kind = selectUserKind();
+		switch (kind) {
+			case 1:
+				return(new GraduationStudent(user));
+			case 2:
+				return(new MasteringStudent(user));
+			case 3:
+				return(new PhDStudent(user));
+			case 4:
+				return(new ProfessorDecorator(user));
+			case 5:
+				return(new ResearcherDecorator(user));
+			case 6:
+				return(new AdminDecorator(user));
+			default:
+				return(user);
+		}
+	}
+
 	public void createUser(DataBase dataBase) {
 
 		System.out.println("\n-------Create User-------");
@@ -80,33 +129,24 @@ public class NewMain {
 
 		User user = new SimpleUser(name, CPF, email);
 
-		System.out.println("Enter the kind of user: ");
-		int kind = selectUserKind();
-		switch (kind) {
-			case 1:
-				user = new GraduationStudent(user);
-				break;
-			case 2:
-				user = new MasteringStudent(user);
-				break;
-			case 3:
-				user = new PhDStudent(user);
-				break;
-			case 4:
-				user = new ProfessorDecorator(user);
-				break;
-			case 5:
-				user = new ResearcherDecorator(user);
-				break;
-			case 6:
-				user = new AdminDecorator(user);
-				break;
-			default:
-				break;
-		}
+		user = decorateUser(user);
 
 		dataBase.addUser(user);
 		System.out.println("User created successfully!");
+	}
+
+	public void editUser(DataBase dataBase) {
+
+		System.out.println("\n---------Edit User---------");
+		User user = selectUser(dataBase);
+		System.out.println(user);
+
+		if (user == null) {
+			System.out.println("User wasn't found!");
+			return;
+		}
+		user = decorateUser(user);
+		dataBase.setUser(user);
 	}
 
 	public void createResource(DataBase dataBase) {
@@ -134,9 +174,7 @@ public class NewMain {
 			return;
 		}
 
-		System.out.printf("Enter allocator: ");
-		String allocatorName = scanner.nextLine();
-		User user = dataBase.getUserByName(allocatorName);
+		User user = selectUser(dataBase);
 		if (user == null) {
 			System.out.println("User wasn't found!");
 			return;
@@ -195,10 +233,7 @@ public class NewMain {
 
 		System.out.println("\n-------Consult User--------");
 
-		System.out.printf("Search user:");
-		String searchedUser = scanner.nextLine();
-
-		User user = dataBase.getUserByName(searchedUser);
+		User user = selectUser(dataBase);
 		if (user == null) {
 			System.out.println("User wasn't found!");
 			return;
@@ -250,13 +285,14 @@ public class NewMain {
 
 			System.out.println("\n----------Menu Principal----------");
 			System.out.println("1 - Create User");
-			System.out.println("2 - Create Resource");
-			System.out.println("3 - Create Activity"); // Alocar recurso
-			System.out.println("4 - Consult User");
-			System.out.println("5 - Consultar Resource");
-			System.out.println("6 - Visualizar Atividades");
-			System.out.println("7 - Relatório");
-			System.out.println("8 - Sair");
+			System.out.println("2 - Edit User");
+			System.out.println("3 - Create Resource");
+			System.out.println("4 - Create Activity"); // Allocate Resource
+			System.out.println("5 - Consult User");
+			System.out.println("6 - Consult Resource");
+			System.out.println("7 - Visualize Activities");
+			System.out.println("8 - Report");
+			System.out.println("9 - Exit");
 
 			int command = newMain.scanner.nextInt();
 			newMain.scanner.nextLine();
@@ -264,19 +300,21 @@ public class NewMain {
 			switch (command) {
 				case 1: newMain.createUser(dataBase);
 					break;
-        case 2: newMain.createResource(dataBase);
-          break;
-        case 3: newMain.createActivity(dataBase);
-          break;
-        case 4: newMain.consultUser(dataBase);
-	        break;
-        case 5: newMain.consultResource(dataBase);
-	        break;
-        case 6: newMain.visualizeActivities(dataBase);
-	        break;
-				case 7: newMain.report(dataBase);
+				case 2: newMain.editUser(dataBase);
 					break;
-				case 8: logged = false;
+        case 3: newMain.createResource(dataBase);
+          break;
+        case 4: newMain.createActivity(dataBase);
+          break;
+        case 5: newMain.consultUser(dataBase);
+	        break;
+        case 6: newMain.consultResource(dataBase);
+	        break;
+        case 7: newMain.visualizeActivities(dataBase);
+	        break;
+				case 8: newMain.report(dataBase);
+					break;
+				case 9: logged = false;
 					break;
 				default: System.out.println("Please select a valid command!");
 					break;
