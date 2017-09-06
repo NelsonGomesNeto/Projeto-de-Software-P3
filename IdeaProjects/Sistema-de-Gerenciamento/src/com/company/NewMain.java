@@ -280,10 +280,10 @@ public class NewMain {
 		DataBase dataBase = new DataBase();
 
 		boolean logged = true;
-		// Menu principal
+		// Main Menu
 		while (logged) {
 
-			System.out.println("\n----------Menu Principal----------");
+			System.out.println("\n----------Main Menu----------");
 			System.out.println("1 - Create User");
 			System.out.println("2 - Edit User");
 			System.out.println("3 - Create Resource");
