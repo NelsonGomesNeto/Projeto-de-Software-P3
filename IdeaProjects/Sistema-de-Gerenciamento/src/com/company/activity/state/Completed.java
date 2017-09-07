@@ -6,8 +6,7 @@ public class Completed implements State {
 
     @Override
     public void changeState(Activity activity) {
-        System.out.println("Completed!");
-        activity.setState(this);
+        return;
     }
 
     @Override

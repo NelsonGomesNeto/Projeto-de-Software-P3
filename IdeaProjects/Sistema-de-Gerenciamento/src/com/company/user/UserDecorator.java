@@ -39,6 +39,11 @@ public abstract class UserDecorator implements User {
 	}
 
 	@Override
+	public boolean hasActivities() {
+		return decoratedUser.hasActivities();
+	}
+
+	@Override
 	public boolean isAvailable(Date begin, Date end) {
 		return(decoratedUser.isAvailable(begin, end));
 	}

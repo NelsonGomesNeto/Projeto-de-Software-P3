@@ -15,6 +15,8 @@ public interface User {
 
 	public ArrayList<Activity> getActivities();
 
+	public boolean hasActivities();
+
 	public boolean isAvailable(Date begin, Date end);
 
 	public void addActivity(Activity activity);

@@ -28,6 +28,24 @@ public class NewMain {
 	public NewMain() throws FileNotFoundException {
 	}
 
+	public void editActivity(ArrayList<Activity> activities) {
+		System.out.println("Enter activity to change state: (-1 == None)");
+		int id = scanner.nextInt(); scanner.nextLine();
+		if (id == -1) {
+			return;
+		} else {
+			activities.get(id - 1).nextState();
+		}
+	}
+
+	public void printActivities(ArrayList<Activity> activities) {
+		int counter  = 0;
+		for (Activity activity : activities) {
+			counter ++;
+			System.out.println(counter + " - " + activity);
+		}
+	}
+
 	public User selectUser(DataBase dataBase) {
 
 		System.out.printf("Enter user name: ");
@@ -139,7 +157,6 @@ public class NewMain {
 
 		System.out.println("\n---------Edit User---------");
 		User user = selectUser(dataBase);
-		System.out.println(user);
 
 		if (user == null) {
 			System.out.println("User wasn't found!");
@@ -147,6 +164,7 @@ public class NewMain {
 		}
 		user = decorateUser(user);
 		dataBase.setUser(user);
+		System.out.println("User edited successfully!");
 	}
 
 	public void createResource(DataBase dataBase) {
@@ -239,6 +257,11 @@ public class NewMain {
 			return;
 		} else {
 			System.out.println("\t" + user);
+			if (user.hasActivities()) {
+				System.out.println("\tActivities:");
+				printActivities(user.getActivities());
+				editActivity(user.getActivities());
+			}
 		}
 	}
 
@@ -255,6 +278,11 @@ public class NewMain {
 			return;
 		} else {
 			System.out.println("\t" + resource);
+			if (resource.hasActivities()) {
+				System.out.println("\tActivities:");
+				printActivities(resource.getActivities());
+				editActivity(resource.getActivities());
+			}
 		}
 	}
 
@@ -263,11 +291,8 @@ public class NewMain {
 		System.out.println("\n----Activities Visualization----");
 
 		System.out.println("Activities:");
-		int counter = 0;
-		for (Activity activity : dataBase.getActivities()) {
-			counter ++;
-			System.out.println(counter + " - " + activity);
-		}
+		printActivities(dataBase.getActivities());
+		editActivity(dataBase.getActivities());
 	}
 
 	public void report(DataBase dataBase) {

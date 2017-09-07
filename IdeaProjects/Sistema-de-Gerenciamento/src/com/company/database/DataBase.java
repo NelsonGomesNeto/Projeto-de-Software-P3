@@ -18,8 +18,6 @@ public class DataBase {
 	ArrayList<Resource> resources;
 	ArrayList<User> users;
 	public State allocating = new Allocating();
-	public State allocated = new Allocated();
-	public State completed = new Completed();
 
 	public DataBase() {
 		activities = new ArrayList<>();

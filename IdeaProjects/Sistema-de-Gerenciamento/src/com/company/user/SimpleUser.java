@@ -42,6 +42,11 @@ public class SimpleUser implements User {
 	}
 
 	@Override
+	public boolean hasActivities() {
+		return this.activities.size() > 0 ? true : false;
+	}
+
+	@Override
 	public boolean isAvailable(Date begin, Date end) {
 
 		for (Activity activity : activities) {

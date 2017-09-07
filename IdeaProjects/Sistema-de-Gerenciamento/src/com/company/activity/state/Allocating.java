@@ -7,8 +7,8 @@ public class Allocating implements State {
     @Override
     public void changeState(Activity activity) {
 
-        System.out.println("Allocating!");
-        activity.setState(this);
+        System.out.println("Allocated!");
+        activity.setState(new Allocated());
     }
 
     @Override

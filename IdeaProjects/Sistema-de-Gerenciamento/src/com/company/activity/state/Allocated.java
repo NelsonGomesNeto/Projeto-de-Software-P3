@@ -8,7 +8,7 @@ public class Allocated implements State {
     public void changeState(Activity activity) {
 
         System.out.println("Allocated!");
-        activity.setState(this);
+        activity.setState(new Completed());
     }
 
     @Override

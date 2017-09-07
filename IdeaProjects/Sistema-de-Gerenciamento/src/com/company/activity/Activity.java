@@ -6,6 +6,7 @@ import com.company.user.User;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Stack;
 
 public abstract class Activity {
 
@@ -35,6 +36,8 @@ public abstract class Activity {
 	public void setState(State state) {
 		this.state = state;
 	}
+
+	public void nextState() { this.state.changeState(this); }
 
 	public State getState() {
 		return state;

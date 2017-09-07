@@ -30,6 +30,14 @@ public class Resource {
 		return(true);
 	}
 
+	public ArrayList<Activity> getActivities() {
+		return activities;
+	}
+
+	public boolean hasActivities() {
+		return this.activities.size() > 0 ? true : false;
+	}
+
 	public void addActivity(Activity activity) {
 		this.activities.add(activity);
 	}
