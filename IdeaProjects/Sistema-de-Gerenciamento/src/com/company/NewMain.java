@@ -21,8 +21,8 @@ import java.util.Scanner;
 
 public class NewMain {
 
-	Scanner scanner = new Scanner(new File("input"));
-	//Scanner scanner = new Scanner(System.in);
+	//Scanner scanner = new Scanner(new File("input"));
+	Scanner scanner = new Scanner(System.in);
 	SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm dd/MM/yyyy");
 
 	public NewMain() throws FileNotFoundException {
