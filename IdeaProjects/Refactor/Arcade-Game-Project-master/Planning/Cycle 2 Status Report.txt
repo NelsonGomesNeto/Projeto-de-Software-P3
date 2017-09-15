@@ -1,0 +1,9 @@
+Bombs exploding -- 5 hours
+All bomb results -- 8 hours
+One kind of monster (can kill hero) -- 4 hours
+
+Difficulties: 
+    Dealing with multi-thread
+    Making hero moving off the bomb
+
+All features completed

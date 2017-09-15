@@ -1,0 +1,8 @@
+Monsters kill hero -- Was done in last cycle
+Both kinds of monsters (add a tracking monster) -- 3 hours
+ALL Power-ups (basic three power-ups) -- 4 hours
+Going between levels on victory -- 3 hours
+Help panel -- 2 hours
+Hero able to walk diagonally (press two keys at the same time) -- 6 hours
+Reset monsters' positions once hero is killed -- 2 hours
+Pause/restart game -- 1 hour

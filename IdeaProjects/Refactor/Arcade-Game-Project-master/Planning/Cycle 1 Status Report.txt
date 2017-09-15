@@ -1,0 +1,5 @@
+Levels loading from files -- 1 hour
+Switching between loaded levels with U and D -- 5 hours
+A hero that can move and drop a bomb, but not exploding --7 hours
+Walls that the player cannot move through --4hours 
+All features completed.
