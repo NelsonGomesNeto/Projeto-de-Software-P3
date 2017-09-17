@@ -10,7 +10,89 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="RegularPrice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/RegularPrice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewReleasePriceDecorator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePriceDecorator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+              <folding>
+                <element signature="e#338#339#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChristmasPriceDecorator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChristmasPriceDecorator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+              <folding>
+                <element signature="e#238#239#0" expanded="true" />
+                <element signature="e#299#300#0" expanded="true" />
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Principal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/Principal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Movie.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Movie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCustomer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/TestCustomer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="82" column="46" lean-forward="false" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,17 +109,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Rental.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Customer.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/TestCustomer.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/Principal.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/Price.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/RegularPrice.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/PriceDecorator.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePrice.java" />
         <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChildrensPrice.java" />
-        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Movie.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/PriceDecorator.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/Price.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePrice.java" />
         <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChildrenPrice.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/RegularPrice.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Rental.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/TestCustomer.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChildrenPriceDecorator.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePriceDecorator.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChristmasPriceDecorator.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/Principal.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Movie.java" />
+        <option value="$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Customer.java" />
       </list>
     </option>
   </component>
@@ -68,9 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -78,11 +160,47 @@
               <item name="refatoracao-locadora-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="refatoracao-locadora-master" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="refatoracao-locadora-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refatoracao-locadora-master" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora-novo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="refatoracao-locadora-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refatoracao-locadora-master" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora-novo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="refatoracao-locadora-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refatoracao-locadora-master" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora-novo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="refatoracao-locadora-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refatoracao-locadora-master" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora-novo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora" type="462c0819:PsiDirectoryNode" />
+              <item name="price" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="refatoracao-locadora-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refatoracao-locadora-master" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora-novo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locadora" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,6 +257,81 @@
       <option name="MAIN_CLASS_NAME" value="test.java.com.locadora.TestCustomer" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestCustomer.testNameCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.java.com.locadora.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="refatoracao-locadora-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.java.com.locadora" />
+      <option name="MAIN_CLASS_NAME" value="test.java.com.locadora.TestCustomer" />
+      <option name="METHOD_NAME" value="testNameCreation" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestCustomer.testOneNewReleaseOneDay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.java.com.locadora.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="refatoracao-locadora-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.java.com.locadora" />
+      <option name="MAIN_CLASS_NAME" value="test.java.com.locadora.TestCustomer" />
+      <option name="METHOD_NAME" value="testOneNewReleaseOneDay" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestCustomer.testOneRegularOneDay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.java.com.locadora.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="refatoracao-locadora-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.java.com.locadora" />
+      <option name="MAIN_CLASS_NAME" value="test.java.com.locadora.TestCustomer" />
+      <option name="METHOD_NAME" value="testOneRegularOneDay" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -230,14 +423,20 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="2">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Principal" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.TestCustomer" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestCustomer.testOneRegularOneDay" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestCustomer.testNameCreation" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestCustomer.testOneNewReleaseOneDay" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Principal" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.TestCustomer" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestCustomer.testOneNewReleaseOneDay" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestCustomer.testNameCreation" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestCustomer.testOneRegularOneDay" />
       </list>
     </recent_temporary>
   </component>
@@ -253,33 +452,62 @@
       <updated>1505261470896</updated>
       <workItem from="1505261472485" duration="4806000" />
       <workItem from="1505477872543" duration="18000" />
+      <workItem from="1505653942911" duration="6426000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestCustomer - 2017.09.12 at 21h 47m 01s.xml">
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 49m 59s.xml">
       <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 51m 20s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 52m 10s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 53m 04s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 53m 45s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 53m 55s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 54m 53s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 55m 00s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer - 2017.09.17 at 11h 56m 01s.xml">
+      <configuration name="TestCustomer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCustomer_testOneNewReleaseOneDay - 2017.09.17 at 11h 49m 53s.xml">
+      <configuration name="TestCustomer.testOneNewReleaseOneDay" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4824000" />
+    <option name="totallyTimeSpent" value="11250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="25" y="333" width="1396" height="502" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25358167" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25716332" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -291,7 +519,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -303,7 +530,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -311,9 +540,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -340,17 +567,20 @@
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChildrenPrice.java">
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChildrenPriceDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -366,114 +596,129 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
-          <folding>
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePrice.java">
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePriceDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding>
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Rental.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/Price.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Movie.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="139">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/RegularPrice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChildrenPrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/PriceDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="87" lean-forward="false" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
+        <state relative-caret-position="136">
+          <caret line="8" column="63" lean-forward="true" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChildrenPriceDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+          <folding>
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/TestCustomer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        <state relative-caret-position="369">
+          <caret line="82" column="46" lean-forward="false" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Rental.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/test/java/com/locadora/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
           <folding>
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/ChristmasPriceDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+          <folding>
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/price/NewReleasePriceDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locadora-novo/src/main/java/com/locadora/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -15,8 +15,15 @@ public class RegularPrice implements Price {
 	}
 
 	@Override
+	public Price removeDiscount() { return this; }
+
+	@Override
 	public int getFrequentRenterPoints(int daysRented) {
-		return 1;
+		return daysRented > 2 ? 2 : 1;
 	}
 
+	@Override
+	public String toString() {
+		return "RegularPrice";
+	}
 }

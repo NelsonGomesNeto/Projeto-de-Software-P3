@@ -6,9 +6,12 @@ public abstract class PriceDecorator implements Price {
 
 	public PriceDecorator(Price priceToDecorate) { this.decoratedPrice = priceToDecorate;	}
 
-	@Override
-	public double getCharge(int daysRented) { return decoratedPrice.getCharge(daysRented); }
+	public Price removeDiscount() { return this.decoratedPrice; }
 
 	@Override
-	public int getFrequentRenterPoints(int daysRented) { return decoratedPrice.getFrequentRenterPoints(daysRented);	}
+	public double getCharge(int daysRented) { return this.decoratedPrice.getCharge(daysRented); }
+
+	@Override
+	public int getFrequentRenterPoints(int daysRented) { return this.decoratedPrice.getFrequentRenterPoints(daysRented);	}
+
 }

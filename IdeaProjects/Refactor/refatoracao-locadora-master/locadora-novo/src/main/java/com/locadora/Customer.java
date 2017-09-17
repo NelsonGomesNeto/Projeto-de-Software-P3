@@ -22,10 +22,10 @@ public class Customer {
 		String result = "Rental Record for " + name + "\n";
 		
 		for (Rental each : rentals) {
-			result += "* " + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
+			result += "* " + each.getMovie().getTitle() + "\t" + String.valueOf(Math.round(100 * each.getCharge()) / 100.0) + "\n";
 		}
 		
-		result += "Amount owed is " + String.valueOf(getTotalAmount()) + "\n";
+		result += "Amount owed is " + String.valueOf(Math.round(100 * getTotalAmount()) / 100.0) + "\n";
 		result += "You earned " + String.valueOf(getTotalFrequentRenterPoints()) + " frequent renter points";
 		
 		return result;

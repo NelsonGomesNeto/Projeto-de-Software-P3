@@ -7,7 +7,11 @@ public class Rental {
 	int daysRented;
 
 	public Rental(Movie movie, int daysRented) {
-		this.movie = movie;
+		try {
+			this.movie = movie.clone();
+		} catch (CloneNotSupportedException c) {
+			c.printStackTrace();
+		}
 		this.daysRented = daysRented;
 	}
 	
